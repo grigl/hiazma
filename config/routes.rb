@@ -1,5 +1,5 @@
 Hiazma::Application.routes.draw do
-  devise_for :users
+  devise_for :users, path: ''
 
   namespace :admin do
     root to: 'home#index'
