@@ -5,4 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# seed user
 User.create(email: "admin@example.com", password: "qwerty", password_confirmation: "qwerty")
+
+# six empty about sections
+6.times do
+  About.create()
+end
+
+# contacts page skeleton
+Contact.create()
+
+# setting for feedbacks reciever email
+Setting.create(name: 'feedback_email_to', value: 'griglmail@gmail.com')
+

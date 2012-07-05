@@ -6,7 +6,5 @@ class CreateSettings < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    add_index :settings, :name, :unique => true
   end
 end

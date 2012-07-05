@@ -61,8 +61,6 @@ ActiveRecord::Schema.define(:version => 20120705115628) do
     t.datetime "updated_at", :null => false
   end
 
-  add_index "settings", ["name"], :name => "index_settings_on_name", :unique => true
-
   create_table "users", :force => true do |t|
     t.string   "email",               :default => "", :null => false
     t.string   "encrypted_password",  :default => "", :null => false
