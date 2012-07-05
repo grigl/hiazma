@@ -1,0 +1,16 @@
+<ul class="nav nav-pills">
+  <% for page in [['Настройки', admin_root_path],
+                  ['О нас', admin_about_path],
+                  ['Новости', admin_articles_path],
+                  ['Проекты', admin_projects_path],
+                  ['Вакансии', admin_jobs_path],
+                  ['Контакты', admin_contacts_path]] %>
+    <% if page[0] == active_nav_link %>
+      <li class="active">
+    <% else %>
+      <li>
+    <% end %>
+      <%= link_to page[0], page[1] %>
+      </li>
+  <% end %>
+</ul>
