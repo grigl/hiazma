@@ -5,6 +5,7 @@ Hiazma::Application.routes.draw do
     root to: 'home#index'
 
     resource :about, :controller => :about, only: [:show, :update]
+    resource :contacts, only: [:show, :update]
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
