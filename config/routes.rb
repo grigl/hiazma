@@ -3,6 +3,8 @@ Hiazma::Application.routes.draw do
 
   namespace :admin do
     root to: 'home#index'
+
+    resource :about, :controller => :about, only: [:show, :update]
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
