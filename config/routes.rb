@@ -6,6 +6,10 @@ Hiazma::Application.routes.draw do
 
     resource :about, :controller => :about, only: [:show, :update]
     resource :contacts, only: [:show, :update]
+
+    resources :projects
+    resources :jobs
+    resources :articles
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
