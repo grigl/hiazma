@@ -10,6 +10,8 @@ Hiazma::Application.routes.draw do
     resources :projects
     resources :jobs
     resources :articles
+
+    resources :users, only: [:update] 
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,2 +1,2 @@
-class Admin::JobsController < ApplicationController
+class Admin::JobsController < Admin::AdminController
 end

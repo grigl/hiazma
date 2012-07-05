@@ -1,2 +1,2 @@
-class Admin::ProjectsController < ApplicationController
+class Admin::ProjectsController < Admin::AdminController
 end

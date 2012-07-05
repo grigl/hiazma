@@ -1,4 +1,4 @@
-class Admin::ContactsController < ApplicationController
+class Admin::ContactsController < Admin::AdminController
   def show
   end
 

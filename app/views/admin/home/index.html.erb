@@ -1,3 +1,12 @@
 <%= active_nav_link 'Настройки' %>
 
-<h2>Главная страница админки</h2>
+<%= simple_form_for [:admin, @user], html: { class: 'form-horizontal edit_admin' } do |f| %>
+  <h2>Сменить логин и пароль</h2><br />
+
+  <%= f.input :id, as: :hidden %>
+
+  <%= f.input :email, label: 'Электронная почта' %>
+  <%= f.input :password, label: 'Пароль' %>
+  <%= f.input :password_confirmation, label: 'Подтвердите пароль' %>
+  <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
+<% end %>
