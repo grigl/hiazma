@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, @project] do |f| %>
+    <%= f.input :title, label: 'Заголовок' %>
+    <%= f.input :link, label: 'Cсылка' %>
+    <%= image_tag @project.image.thumb if @project.image.present? %>
+    <%= f.input :image %>
+    <%= f.input :description, label: 'Описание' %>
+    <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
+<% end %>
+

@@ -1,0 +1,19 @@
+<%= active_nav_link "Вакансии" %><br />
+
+<%= link_to 'Создать вакансию', new_admin_job_path, class: 'btn btn-primary' %><br /><br />
+
+<table class="table">
+  <thead>
+    <tr>
+      <td><h4>Заголовок</h4></td>
+      <td></td>
+    </tr>
+  </thead>
+  <% for job in @jobs %>
+    <tr>
+      <td><%= job.title %></td>
+      <td><%= link_to 'Изменить', edit_admin_job_path(job), class: 'btn btn-info' %>
+          <%= link_to 'Удалить', admin_job_path(job), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>

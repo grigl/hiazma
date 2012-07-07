@@ -1,0 +1,23 @@
+<%= active_nav_link "Новости" %><br />
+
+<%= link_to 'Создать новость', new_admin_article_path, class: 'btn btn-primary' %><br /><br />
+
+<table class="table">
+  <thead>
+    <tr>
+      <td><h4>Дата публикации</h4></td>
+      <td><h4>Заголовок новости</h4></td>
+      <td><h4>Картинка новости</h4></td>
+      <td></td>
+    </tr>
+  </thead>
+  <% for article in @articles %>
+    <tr>
+      <td><%= article.created_at %></td>
+      <td><%= article.title %></td>
+      <td><%= image_tag article.image.thumb %></td>
+      <td><%= link_to 'Изменить', edit_admin_article_path(article), class: 'btn btn-info' %>
+          <%= link_to 'Удалить', admin_article_path(article), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @article] do |f| %>
+    <%= f.input :title, label: 'Заголовок новости' %>
+    <%= image_tag @article.image.thumb if @article.image.present? %>
+    <%= f.input :image %>
+    <%= f.input :description, label: 'Текст новости' %>
+    <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
+<% end %>
+
