@@ -1,0 +1,8 @@
+<%= active_nav_link 'Контакты' %>
+
+<%= simple_form_for [:admin, @contact], url: admin_contacts_path(@contact), html: { class: 'form-vertical' } do |f| %>
+  <h2>Изменить контакты</h2>
+
+  <%= f.input :description, label: 'Описание' %>
+  <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
+<% end %>
