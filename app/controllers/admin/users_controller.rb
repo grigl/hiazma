@@ -4,7 +4,7 @@ class Admin::UsersController < Admin::AdminController
 
     if @user.update_attributes(params[:user])
       sign_in @user, bypass: true
-      redirect_to admin_root_path, notice: "user updated"
+      redirect_to :back, notice: "user updated"
     else
       redirect_to :back, alert: "errors"
     end

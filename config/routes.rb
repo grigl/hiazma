@@ -4,7 +4,7 @@ Hiazma::Application.routes.draw do
   namespace :admin do
     root to: 'home#index'
 
-    resource :about, :controller => :about, only: [:show, :update]
+    resource :about, only: [:show, :update]
     resource :contacts, only: [:show, :update]
 
     resources :projects
