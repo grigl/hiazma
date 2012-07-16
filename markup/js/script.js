@@ -18,6 +18,11 @@ $(document).ready(function(){
 		//IE6 standards compliant mode
 		offset = document.documentElement.scrollTop;
 		}
+		if( offset == 0 )
+		{
+			$('.header-menu li').removeClass('current');
+			return;
+		}
 		var prev = 0;
 		var delta = 500;
 		var anchor = false;
