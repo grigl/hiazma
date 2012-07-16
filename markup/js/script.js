@@ -39,7 +39,7 @@ $(document).ready(function(){
 	
 	$('.header-menu a, .nav-link').click(function () {	
 		elementClick = $(this).attr('href')
-		destination = $(elementClick).offset().top - 70;
+		destination = $(elementClick).offset().top + 5;
 		$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 1100 );
 		return false;
 	});
