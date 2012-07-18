@@ -11,6 +11,7 @@ gem 'will_paginate'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'globalize3'
 
 # Gems used only for assets and not required
 # in production environments by default.
