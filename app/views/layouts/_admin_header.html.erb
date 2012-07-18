@@ -13,4 +13,14 @@
       <%= link_to page[0], page[1] %>
       </li>
   <% end %>
+
+  <li class="nav-pills-text-sep"><h4>Вы редактируете:</h4></li>
+
+  <% if params[:locale] == 'ru' %>
+    <li><%= link_to 'Английский контент', locale: nil %></li>
+    <li class="active"><a>Русский контент</a></li>
+  <% else %>
+    <li class="active"><a>Английский контент</a></li>
+    <li><%= link_to 'Русский контент', locale: 'ru' %></li>
+  <% end %>
 </ul>
