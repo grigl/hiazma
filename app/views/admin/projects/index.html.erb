@@ -1,23 +1,33 @@
-<%= active_nav_link "Проекты" %><br />
+<%= active_nav_link "Проекты" %>
 
-<%= link_to 'Создать проект', new_admin_project_path, class: 'btn btn-primary' %><br /><br />
+<div class="content_articles">
+  <h2>Проекты</h2><br />
 
-<table class="table">
-  <thead>
-    <tr>
-      <td><h4>Заголовок</h4></td>
-      <td><h4>Ссылка</h4></td>
-      <td><h4>Картинка</h4></td>
-      <td></td>
-    </tr>
-  </thead>
-  <% for project in @projects %>
-    <tr>
-      <td><%= project.title %></td>
-      <td><%= project.link %></td>
-      <td><%= image_tag project.image.thumb %></td>
-      <td><%= link_to 'Изменить', edit_admin_project_path(project), class: 'btn btn-info' %>
-          <%= link_to 'Удалить', admin_project_path(project), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %></td>
-    </tr>
-  <% end %>
-</table>
+  <%= link_to 'Создать проект', new_admin_project_path, class: 'btn btn-primary' %><br /><br />
+
+  <table class="table">
+    <colgroup>
+      <col width="300px" />
+      <col width="400px" />
+      <col width="300px" />
+      <col width="200px" />
+    </colgroup>
+    <thead>
+      <tr>
+        <td><h4>Заголовок</h4></td>
+        <td><h4>Ссылка</h4></td>
+        <td><h4>Картинка</h4></td>
+        <td><h4>Действия</h4></td>
+      </tr>
+    </thead>
+    <% for project in @projects %>
+      <tr>
+        <td><%= project.title %></td>
+        <td><%= project.link %></td>
+        <td><%= image_tag project.image.thumb if project.image.present? %></td>
+        <td><%= link_to 'Изменить', edit_admin_project_path(project), class: 'btn btn-info' %>
+            <%= link_to 'Удалить', admin_project_path(project), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

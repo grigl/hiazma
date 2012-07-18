@@ -21,7 +21,132 @@
   }
 }
 
+/* about content */
+.content_about {
+  margin-left: 160px;
+}
+
 /* about form */
 .edit_about {
   float:left;
+  margin-right: 20px;
+  background-color:#DFEBF5;
+  border-style: none;
+  padding: 5px;
+
+  input, textarea {
+    border: none;
+  }
+}
+
+.content_articles {
+  margin-left: 160px;
+
+  table {
+    width: 1200px;
+    border-collapse:separate; 
+    border-spacing:0 5px;
+    table-layout:fixed;
+
+    td {
+      border-style: none;
+      overflow: hidden;
+
+      a.btn {
+        border: none;
+      }
+    }
+
+    tbody {
+      background-color:#DFEBF5;
+    }
+  }
+}
+
+.edit_articles {
+  h2 {
+    margin-left: 160px;
+  }
+  .btn {
+    margin-left: 160px;
+  }
+  img {
+    margin-left: 160px;
+  }
+}
+
+.content_projects {
+  margin-left: 160px;
+
+  table {
+    width: 1200px;
+    border-collapse:separate; 
+    border-spacing:0 5px;
+    table-layout:fixed;
+
+    td {
+      border-style: none;
+      overflow: hidden;
+
+      a.btn {
+        border: none;
+      }
+    }
+
+    tbody {
+      background-color:#DFEBF5;
+    }
+  }
+}
+
+.edit_projects {
+  h2 {
+    margin-left: 160px;
+  }
+  .btn {
+    margin-left: 160px;
+  }
+  img {
+    margin-left: 160px;
+  }
+}
+
+.content_jobs {
+  margin-left: 160px;
+
+  table {
+    width: 1200px;
+    border-collapse:separate; 
+    border-spacing:0 5px;
+    table-layout:fixed;
+
+    td {
+      border-style: none;
+      overflow: hidden;
+
+      a.btn {
+        border: none;
+      }
+    }
+
+    tbody {
+      background-color:#DFEBF5;
+    }
+  }
+}
+
+.edit_jobs {
+  h2 {
+    margin-left: 160px;
+  }
+  .btn {
+    margin-left: 160px;
+  }
+  img {
+    margin-left: 160px;
+  }
+}
+
+.content_contacts {
+  margin-left: 160px;
 }

@@ -1,8 +1,10 @@
 <%= active_nav_link 'Контакты' %>
 
-<%= simple_form_for [:admin, @contact], url: admin_contacts_path(@contact), html: { class: 'form-vertical' } do |f| %>
-  <h2>Изменить контакты</h2>
+<div class="content_contacts">
+  <%= simple_form_for [:admin, @contact], url: admin_contacts_path(@contact), html: { class: 'form-vertical' } do |f| %>
+    <h2>Изменить контакты</h2><br />
 
-  <%= f.input :description, label: 'Описание' %>
-  <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
-<% end %>
+    <%= f.input :description, label: 'Описание', input_html: { class: "span4", rows: 14 } %>
+    <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
+  <% end %>
+</div>
