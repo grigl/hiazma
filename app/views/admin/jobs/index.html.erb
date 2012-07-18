@@ -20,14 +20,16 @@
         <td><h4>Действия</h4></td>
       </tr>
     </thead>
-    <% for job in @jobs %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.job_profile %></td>
-        <td><%= job.requirements %></td>
-        <td><%= link_to 'Изменить', edit_admin_job_path(job), class: 'btn btn-info' %>
-            <%= link_to 'Удалить', admin_job_path(job), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
+    <tbody id="jobs_list" data-update-url="<%= sort_admin_jobs_path %>">
+      <% for job in @jobs %>
+        <tr id="jobs_<%= job.id %>">
+          <td><%= job.title %></td>
+          <td><%= job.job_profile %></td>
+          <td><%= job.requirements %></td>
+          <td><%= link_to 'Изменить', edit_admin_job_path(job), class: 'btn btn-info' %>
+              <%= link_to 'Удалить', admin_job_path(job), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>

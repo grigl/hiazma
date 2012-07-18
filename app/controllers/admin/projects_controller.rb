@@ -1,6 +1,6 @@
 class Admin::ProjectsController < Admin::AdminController
   def index
-    @projects = Project.order('created_at DESC')
+    @projects = Project.order(:position)
   end
 
   def new
@@ -38,5 +38,12 @@ class Admin::ProjectsController < Admin::AdminController
 
     @project.destroy
     redirect_to :back, notice: 'project deleted'
+  end
+
+  def sort
+    params[:projects].each_with_index do |id, index|
+      Project.update_all({ position: index },{ id: id })
+    end
+    render nothing: true
   end
 end

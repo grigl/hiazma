@@ -7,8 +7,12 @@ Hiazma::Application.routes.draw do
     resource :about, only: [:show, :update]
     resource :contacts, only: [:show, :update]
 
-    resources :projects
-    resources :jobs
+    resources :projects do
+      collection { post :sort }
+    end
+    resources :jobs do
+      collection { post :sort }
+    end
     resources :articles
 
     resources :users, only: [:update] 

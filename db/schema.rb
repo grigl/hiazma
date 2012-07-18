@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718144631) do
+ActiveRecord::Schema.define(:version => 20120718195257) do
 
   create_table "about_translations", :force => true do |t|
     t.integer  "about_id"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20120718144631) do
     t.text     "how_to_apply"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "position"
   end
 
   create_table "project_translations", :force => true do |t|
@@ -115,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20120718144631) do
     t.string   "link"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "position"
   end
 
   create_table "settings", :force => true do |t|

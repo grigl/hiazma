@@ -1,6 +1,6 @@
 class Admin::JobsController < Admin::AdminController
   def index
-    @jobs = Job.order('created_at DESC')
+    @jobs = Job.order(:position)
   end
 
   def new
@@ -38,5 +38,12 @@ class Admin::JobsController < Admin::AdminController
 
     @job.destroy
     redirect_to :back, notice: 'job deleted'
+  end
+
+  def sort
+    params[:jobs].each_with_index do |id, index|
+      Job.update_all({ position: index },{ id: id })
+    end
+    render nothing: true
   end
 end

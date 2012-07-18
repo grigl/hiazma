@@ -1,4 +1,7 @@
 /* devise sign_in page*/
+body {
+  overflow-x: hidden;
+}
 #new_user {
   h2 {
     margin-left: 160px;
@@ -26,7 +29,7 @@
 
 .nav {
   .btn-inverse {
-    margin-top: 5px;
+    margin-top: 4px;
     margin-left: 50px;
   }
 }
