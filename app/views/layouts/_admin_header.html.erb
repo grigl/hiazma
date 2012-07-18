@@ -17,10 +17,12 @@
   <li class="nav-pills-text-sep"><h4>Вы редактируете:</h4></li>
 
   <% if params[:locale] == 'ru' %>
-    <li><%= link_to 'Английский контент', locale: nil %></li>
+    <li><%= link_to 'Английский контент', locale: 'en' %></li>
     <li class="active"><a>Русский контент</a></li>
   <% else %>
     <li class="active"><a>Английский контент</a></li>
     <li><%= link_to 'Русский контент', locale: 'ru' %></li>
   <% end %>
+
+  <%= link_to 'Выйти', destroy_user_session_path, class: 'btn btn-inverse', method: :delete %>
 </ul>
