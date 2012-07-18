@@ -8,6 +8,14 @@
 </head>
 <body>
 
+<div class="messages">
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <%= msg %>
+    </div>
+  <% end %>
+</div>
+
 <% if user_signed_in? %>
   <%= render 'layouts/admin_header', active_nav_link: yield(:active_nav_link) %>
 <% end %>

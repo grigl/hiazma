@@ -9,7 +9,8 @@ class Admin::ContactsController < Admin::AdminController
     if @contact.update_attributes(params[:contact])
       redirect_to :back, notice: 'contacts updated'
     else
-      redirect_to :back, alert: 'errors'
+      @errors = @contact.errors.full_messages.join('. ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 end

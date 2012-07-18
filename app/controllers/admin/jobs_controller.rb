@@ -11,9 +11,10 @@ class Admin::JobsController < Admin::AdminController
     @job = Job.new(params[:job])
 
     if @job.save
-      redirect_to :back, notice: 'job created'
+      redirect_to admin_jobs_path, notice: 'job created'
     else
-      redirect_to :back, alert: 'errors'
+      @errors = @job.errors.full_messages.join('. ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 
@@ -21,9 +22,10 @@ class Admin::JobsController < Admin::AdminController
     @job = Job.find(params[:id])
 
     if @job.update_attributes(params[:job])
-      redirect_to :back, notice: 'job updated'
+      redirect_to admin_jobs_path, notice: 'job updated'
     else
-      redirect_to :back, alert: 'errors'
+      @errors = @job.errors.full_messages.join('. ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 

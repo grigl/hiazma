@@ -11,9 +11,10 @@ class Admin::ArticlesController < Admin::AdminController
     @article = Article.new(params[:article])
 
     if @article.save
-      redirect_to :back, notice: 'article created'
+      redirect_to admin_articles_path, notice: 'article created'
     else
-      redirect_to :back, alert: 'errors'
+      @errors = @article.errors.full_messages.join('. ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 
@@ -21,9 +22,10 @@ class Admin::ArticlesController < Admin::AdminController
     @article = Article.find(params[:id])
 
     if @article.update_attributes(params[:article])
-      redirect_to :back, notice: 'article updated'
+      redirect_to admin_articles_path, notice: 'article updated'
     else
-      redirect_to :back, alert: 'errors'
+      @errors = @article.errors.full_messages.join('. ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 

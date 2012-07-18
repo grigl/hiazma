@@ -11,9 +11,10 @@ class Admin::ProjectsController < Admin::AdminController
     @project = Project.new(params[:project])
 
     if @project.save
-      redirect_to :back, notice: 'project created'
+      redirect_to admin_projects_path, notice: 'project created'
     else
-      redirect_to :back, alert: 'errors'
+      @errors = @project.errors.full_messages.join('. ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 
@@ -21,9 +22,10 @@ class Admin::ProjectsController < Admin::AdminController
     @project = Project.find(params[:id])
 
     if @project.update_attributes(params[:project])
-      redirect_to :back, notice: 'project updated'
+      redirect_to admin_projects_path, notice: 'project updated'
     else
-      redirect_to :back, alert: 'errors'
+      @errors = @project.errors.full_messages.join('. ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 

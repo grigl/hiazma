@@ -6,7 +6,8 @@ class Admin::UsersController < Admin::AdminController
       sign_in @user, bypass: true
       redirect_to :back, notice: "user updated"
     else
-      redirect_to :back, alert: "errors"
+      @errors = @user.errors.full_messages.join('. ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 end

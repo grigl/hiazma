@@ -9,7 +9,8 @@ class Admin::AboutsController < Admin::AdminController
     if @about.update_attributes(params[:about].except(:id))
       redirect_to :back, notice: "about updated"
     else
-      redirect_to :back, alert: "errors"
+      @errors = @about.errors.full_messages.join(' ')
+      redirect_to :back, alert: "#{@errors}"
     end
   end
 end
