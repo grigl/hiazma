@@ -4,9 +4,9 @@ class Admin::AboutsController < Admin::AdminController
   end
 
   def update
-    @about = About.find(params[:format])
+    @about = About.find(params[:about][:id])
 
-    if @about.update_attributes(params[:about])
+    if @about.update_attributes(params[:about].except(:id))
       redirect_to :back, notice: "about updated"
     else
       redirect_to :back, alert: "errors"

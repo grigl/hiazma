@@ -5,6 +5,8 @@
 
   <% for about in @abouts %>
     <%= simple_form_for [:admin, about], html: { class: 'form-vertical edit_about' } do |f| %>
+      <%= f.input :id, as: :hidden %>
+
       <%= f.input :title, label: 'Заголовок' %>
       <%= f.input :description, label: 'Описание', input_html: { class: "span4", rows: 11 } %>
       <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>

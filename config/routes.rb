@@ -12,6 +12,7 @@ Hiazma::Application.routes.draw do
     resources :articles
 
     resources :users, only: [:update] 
+    resource :feedback_email_to, only: [:update]
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
