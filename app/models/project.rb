@@ -5,4 +5,11 @@ class Project < ActiveRecord::Base
   translates :description, :title
 
   validates :title, presence: true
+
+  before_create :get_position
+
+  def get_position
+    positions = Ppoject.pluck(:position)
+    self.position = ( positions.max + 1 if !positions.empty? ) || 0
+  end
 end
