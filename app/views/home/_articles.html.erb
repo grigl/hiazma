@@ -1,0 +1,51 @@
+<div id="news" class="section-header">
+  <span class="line"></span>
+  <div class="wrapper">
+    <h2>What’s new</h2>
+  </div>
+</div>
+<section class="texture">
+  <div class="wrapper">
+
+    <div class="news-list">
+      <ul class="pager">
+        <% @articles.total_pages.times do |i| %>
+          <% if i == 0 %>
+            <li><a href="#" class="active" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
+          <% else %>
+            <li><a href="#" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
+          <% end %>
+        <% end %>
+      </ul>
+      <div class="news-list-viewport">
+        <ul class="news-list-wrapper">
+            <li class="news-list-page">
+              <% @articles.each do |article| %>
+              <article class="news-item">
+                <figure>
+                  <%= ( image_tag article.image if article.image.present? ) || raw( '<img src="" width="978" height="78" alt="">' ) %>
+                </figure>
+                <span class="date"><%= article.created_at %></span>
+                <h3><%= article.title %></h3>
+                <p><%= article.description.html_safe if article.description? %></p>
+                <div class="link">
+                  <a href="#" class="show-news">Read more <em>►</em></a>
+                </div>
+              </article>
+              <% end %>
+            </li>
+        </ul>
+      </div>
+      <ul class="pager">
+        <% @articles.total_pages.times do |i| %>
+          <% if i == 0 %>
+            <li><a href="#" class="active" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
+          <% else %>
+            <li><a href="#" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    
+  </div>
+</section>

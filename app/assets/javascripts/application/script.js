@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 // navigation
+	
 	$('.header-logo').click(function(e){
 		 e.preventDefault();
 		 $('html, body').animate({scrollTop:'0px'}, 1600);
@@ -8,6 +9,7 @@ $(document).ready(function(){
 	});
 	
 	$(window).scroll(function(e){
+		
 		if( typeof( window.pageYOffset ) == 'number' )
 		{
 		offset = window.pageYOffset;
@@ -57,18 +59,27 @@ $(document).ready(function(){
 	$('.news-list .pager a').click(function(e){
 		e.preventDefault();
 		var newRel = $(this).attr('rel');
-		var delta = newRel - oldRel;
-		var speed = Math.abs(delta) > 1 ? 1200 : 600;
-		$(this).closest('div').find('.news-list-wrapper').animate({'left': (delta < 0 ? '+' : '-' ) + '=' + Math.abs(delta) * 100 + '%'}, speed);
-		oldRel = newRel;
-		$('.news-list .pager a').removeClass('active');
-		$('.news-list .pager a[rel='+ newRel +']').addClass('active');
+		newsList = this
+		$.get('?page=' + newRel, function(data) {
+	  	newData = $(data).find('.news-list-wrapper').html();
+			$('.news-list-page').after(newData)
+			var delta = newRel - oldRel;
+			var speed = Math.abs(delta) > 1 ? 1200 : 600;
+			$(newsList).closest('div').find('.news-list-wrapper').animate({'left': (delta < 0 ? '+' : '-' ) + '=' + Math.abs(delta) * 100 + '%'}, speed);
+			oldRel = newRel;
+			$('.news-list .pager a').removeClass('active');
+			$('.news-list .pager a[rel='+ newRel +']').addClass('active');
+		});
 	});
 	
 	$('.news-item .show-news').click(function(e){
-		 e.preventDefault();
-		 $('.news-list').slideUp();
-		 $('.news-view').slideDown();
+		e.preventDefault();
+		var index = $('.news-item .show-news').index(this);
+		$('.news-view .pager a').removeClass('active');
+		$('.news-view .pager a:eq('+ index +')').addClass('active');
+		$('.news-view .news-list-wrapper').css('left', '-'+ index +'00%');
+		$('.news-list').slideUp();
+		$('.news-view').slideDown();
 	});
 	
 	oldRel2 = 1;
@@ -94,6 +105,13 @@ $(document).ready(function(){
 		 e.preventDefault();
 		 $(this).parent().toggleClass('open').next().slideToggle();
 	});
+
+// feedback-done submit
+	$('.feedback-done .button').click(function(e){
+		e.preventDefault();
+		$('.feedback').slideDown();
+		$('.feedback-done').slideUp();
+	})
 
 });
 

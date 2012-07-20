@@ -11,11 +11,11 @@ User.create(email: "admin@example.com", password: "qwerty", password_confirmatio
 
 # six empty about sections
 6.times do
-  About.create()
+  About.create(title: '', description: '')
 end
 
 # contacts page skeleton
-Contact.create()
+Contact.create(description: '')
 
 # setting for feedbacks reciever email
 Setting.create(name: 'feedback_email_to', value: 'griglmail@gmail.com')

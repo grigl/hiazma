@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
   before_create :get_position
 
   def get_position
-    positions = Ppoject.pluck(:position)
+    positions = Project.pluck(:position)
     self.position = ( positions.max + 1 if !positions.empty? ) || 0
   end
 end

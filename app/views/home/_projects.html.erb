@@ -1,0 +1,20 @@
+<div id="projects" class="section-header">
+  <span class="line"></span>
+  <div class="wrapper">
+    <h2>Projects</h2>
+  </div>
+</div>
+<section class="texture">
+  <div class="wrapper">
+    <% @projects.each do |project| %>
+      <div class="projects-item">
+        <h3><%= project.title %></h3>
+        <figure>
+          <%= ( image_tag project.image if project.image.present? ) || raw( '<img src="" width="435" height="315" alt="">' ) %>
+        </figure>
+        <p><%= project.description.html_safe if project.description? %></p>
+        <%= link_to 'Visit Website', "http://#{project.link.gsub('http://', '')}", class: 'button' %>
+      </div>
+    <% end %>
+  </div>
+</section>

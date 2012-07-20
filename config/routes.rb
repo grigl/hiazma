@@ -1,5 +1,8 @@
 Hiazma::Application.routes.draw do
+  root to: "home#index"
+
   devise_for :users, path: ''
+  resources :feedbacks, only: [:create]
 
   namespace :admin do
     root to: 'home#index'
@@ -10,9 +13,11 @@ Hiazma::Application.routes.draw do
     resources :projects do
       collection { post :sort }
     end
+
     resources :jobs do
       collection { post :sort }
     end
+
     resources :articles
 
     resources :users, only: [:update] 

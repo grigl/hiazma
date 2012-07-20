@@ -1,0 +1,38 @@
+<header>
+  <div class="wrapper">
+    <a href="#top" class="header-logo">Hiazma Games</a>
+    <ul class="header-menu">
+      <li><a href="#whoweare">Who we are</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#job">Job</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+    <div class="header-language">
+      <%= link_to '', { locale: 'ru' }, class: 'ru' %>  
+      <%= link_to '', { locale: nil }, class: 'en' %>
+    </div>
+  </div>
+</header>
+
+<section class="hiazma-image" id="top">
+  <div class="wrapper">
+    <h1><%= t('hello') %></h1>
+  </div>
+</section>
+
+<%= render 'who_we_are' %>
+
+<%= render 'articles' %>
+
+<%= render 'projects' %>
+
+<%= render 'jobs' %>
+
+<%= render 'contacts' %>
+  
+<footer>
+  <div class="wrapper">
+    Hiazma games 2012 all rights reserved
+  </div>
+</footer>
