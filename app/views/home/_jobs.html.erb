@@ -1,0 +1,51 @@
+<div id="job" class="section-header">
+  <span class="line"></span>
+  <div class="wrapper">
+    <h2>Job</h2>
+  </div>
+</div>
+<section class="texture">
+  <div class="wrapper">
+    
+    <ul class="jobs-grid">
+      <% @jobs.each do |job| %>
+        <li class="jobs-grid-item">
+          <h3><%= job.title %></h3>
+          <ul class="jobs-title">
+            <li class="jobs-title-item">
+              <h4><a href="#">Job Profile</a></h4>
+              <ul class="jobs-list">
+                <%= job.job_profile %>
+              </ul>
+            </li>
+            <li class="jobs-title-item">
+              <h4><a href="#">Your Profile</a></h4>
+              <ul class="jobs-list">
+                <%= job.your_profile %>
+              </ul>
+            </li>
+            <li class="jobs-title-item">
+              <h4><a href="#">Requirements</a></h4>
+              <ul class="jobs-list">
+                <%= job.requirements %>
+              </ul>
+            </li>
+            <li class="jobs-title-item">
+              <h4><a href="#">Other skillsets</a></h4>
+              <ul class="jobs-list">
+                <%= job.other_skillsets %>
+              </ul>
+            </li>
+            <li class="jobs-title-item">
+              <h4><a href="#">How to apply</a></h4>
+              <ul class="jobs-list">
+                <%= job.how_to_apply %>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+    
+  </div>
+</section>

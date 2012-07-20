@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 // navigation
+	
 	$('.header-logo').click(function(e){
 		 e.preventDefault();
 		 $('html, body').animate({scrollTop:'0px'}, 1600);
@@ -8,6 +9,7 @@ $(document).ready(function(){
 	});
 	
 	$(window).scroll(function(e){
+		
 		if( typeof( window.pageYOffset ) == 'number' )
 		{
 		offset = window.pageYOffset;
@@ -57,18 +59,39 @@ $(document).ready(function(){
 	$('.news-list .pager a').click(function(e){
 		e.preventDefault();
 		var newRel = $(this).attr('rel');
+		var pageIds = new Array();
+		$('.news-list-page').each(function(){
+			pageIds.push(parseInt($(this).attr('id')));
+		});
+		var relIds = new Array();
+		for( i=2; i <= newRel; i++ ) {
+			relIds.push(i)
+		}
+		alert(relIds);
+		if ( pageIds.indexOf(parseInt(newRel)) < 0 ) {
+			$.each(relIds, function() { 
+				$.get('?page=' + this, function(data) {
+					$('.news-list .news-list-page:last').after($(data).find('.news-list .news-list-page:first'));
+					$('.news-view .news-list-page:last').after($(data).find('.news-view .news-list-page'));
+				});
+			});
+		}
 		var delta = newRel - oldRel;
 		var speed = Math.abs(delta) > 1 ? 1200 : 600;
 		$(this).closest('div').find('.news-list-wrapper').animate({'left': (delta < 0 ? '+' : '-' ) + '=' + Math.abs(delta) * 100 + '%'}, speed);
 		oldRel = newRel;
 		$('.news-list .pager a').removeClass('active');
-		$('.news-list .pager a[rel='+ newRel +']').addClass('active');
+	  $('.news-list .pager a[rel='+ newRel +']').addClass('active');
 	});
 	
 	$('.news-item .show-news').click(function(e){
-		 e.preventDefault();
-		 $('.news-list').slideUp();
-		 $('.news-view').slideDown();
+		e.preventDefault();
+		var index = $('.news-item .show-news').index(this);
+		$('.news-view .pager a').removeClass('active');
+		$('.news-view .pager a:eq('+ index +')').addClass('active');
+		$('.news-view .news-list-wrapper').css('left', '-'+ index +'00%');
+		$('.news-list').slideUp();
+		$('.news-view').slideDown();
 	});
 	
 	oldRel2 = 1;
@@ -94,6 +117,13 @@ $(document).ready(function(){
 		 e.preventDefault();
 		 $(this).parent().toggleClass('open').next().slideToggle();
 	});
+
+// feedback-done submit
+	$('.feedback-done .button').click(function(e){
+		e.preventDefault();
+		$('.feedback').slideDown();
+		$('.feedback-done').slideUp();
+	})
 
 });
 

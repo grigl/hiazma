@@ -1,0 +1,17 @@
+<div id="whoweare" class="section-header">
+  <div class="wrapper">
+    <h2>Who we are</h2>
+  </div>
+</div>
+<section class="texture">
+  <div class="wrapper">
+    <ul class="grid-6">
+      <% @abouts.each do |about| %>
+        <li>
+          <h4><%= about.title %></h4>
+          <p><%= about.description.html_safe if about.description? %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
