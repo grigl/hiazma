@@ -46,7 +46,7 @@ $(document).ready(function(){
 	
 	$('.header-menu a, .nav-link').click(function () {	
 		elementClick = $(this).attr('href')
-		destination = $(elementClick).offset().top + 5;
+		destination = $(elementClick).offset().top;
 		$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 1100 );
 		return false;
 	});
@@ -86,7 +86,7 @@ $(document).ready(function(){
 	
 	$('.news-item .show-news').click(function(e){
 		e.preventDefault();
-		var index = $('.news-item .show-news').index(this);
+		var index = $('.news-item .show-news').index(this) % 3;
 		$('.news-view .pager a').removeClass('active');
 		$('.news-view .pager a:eq('+ index +')').addClass('active');
 		$('.news-view .news-list-wrapper').css('left', '-'+ index +'00%');
