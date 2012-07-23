@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719085420) do
+ActiveRecord::Schema.define(:version => 20120718195257) do
 
   create_table "about_translations", :force => true do |t|
     t.integer  "about_id"
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(:version => 20120719085420) do
   add_index "about_translations", ["locale"], :name => "index_about_translations_on_locale"
 
   create_table "abouts", :force => true do |t|
-    t.string   "title",       :default => "", :null => false
-    t.text     "description", :default => "", :null => false
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "article_translations", :force => true do |t|
