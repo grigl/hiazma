@@ -1,12 +1,19 @@
-<%= simple_form_for resource, as: resource_name, 
-                              url: session_path(resource_name),
-                              html: { class: 'form-horizontal' } do |f| %>
-  <h2>Вход в админку</h2><br />
-
-  <%= f.input :email, label: 'Электронная почта' %>
-  <%= f.input :password, label: 'Пароль' %>
-  <% if devise_mapping.rememberable? %>
-    <%= f.input :remember_me, as: :boolean, label: 'Запомнить меня' %>
-  <% end %>
-  <%= f.button :submit, value: 'Войти', class: 'btn-primary' %>
-<% end %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for resource, as: resource_name,
+                                  url: session_path(resource_name),
+                                  html: { class: 'form-horizontal' } do |f| %>
+      <legend>Вход в админку</legend>
+      <fieldset>
+        <%= f.input :email, label: 'Электронная почта' %>
+        <%= f.input :password, label: 'Пароль' %>
+        <% if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, as: :boolean, label: 'Запомнить меня' %>
+        <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, value: 'Войти', class: 'btn-primary' %>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

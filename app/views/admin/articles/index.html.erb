@@ -1,33 +1,27 @@
 <%= active_nav_link "Новости" %>
 
-<div class="content_articles">
-  <h2>Новости</h2><br />
+<legend>
+  Новости
+  <%= link_to 'Создать новость', new_admin_article_path, class: 'btn btn-primary btn-mini pull-right' %>
+</legend>
 
-  <%= link_to 'Создать новость', new_admin_article_path, class: 'btn btn-primary' %><br /><br />
 
-  <table class="table">
-    <colgroup>
-      <col width="300px" />
-      <col width="400px" />
-      <col width="300px" />
-      <col width="200px" />
-    </colgroup>
-    <thead>
-      <tr>
-        <td><h4>Дата публикации</h4></td>
-        <td><h4>Заголовок</h4></td>
-        <td><h4>Картинка</h4></td>
-        <td><h4>Действия</h4></td>
-      </tr>
-    </thead>
-    <% for article in @articles %>
-      <tr>
-        <td><%= article.created_at %></td>
-        <td><%= article.title %></td>
-        <td><%= image_tag article.image.thumb if article.image.present? %></td>
-        <td><%= link_to 'Изменить', edit_admin_article_path(article), class: 'btn btn-info' %>
-            <%= link_to 'Удалить', admin_article_path(article), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Дата публикации</th>
+      <th>Заголовок</th>
+      <th>Картинка</th>
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <% for article in @articles %>
+    <tr>
+      <td style="white-space: nowrap"><%= article.created_at %></td>
+      <td><%= article.title %></td>
+      <td><%= image_tag article.image.thumb if article.image.present? %></td>
+      <td style="white-space: nowrap" width="100"><%= link_to 'Изменить', edit_admin_article_path(article), class: 'btn btn-info btn-mini' %>
+          <%= link_to 'Удалить', admin_article_path(article), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger btn-mini' %></td>
+    </tr>
+  <% end %>
+</table>

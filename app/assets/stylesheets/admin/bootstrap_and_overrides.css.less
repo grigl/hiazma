@@ -1,9 +1,14 @@
-@import "twitter/bootstrap/bootstrap";
-body { 
-	padding-top: 60px;
-	padding-left: 20px;
-}
 
+@import "twitter/bootstrap/bootstrap";
+//body {
+//  padding-top: 60px;
+//  padding-left: 20px;
+//}
+.navbar-inner {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -11,7 +16,7 @@ body {
 @iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
 
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not 
+// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not
 //       have the proper paths. So for now we use the absolute path.
 @fontAwesomeEotPath: '/assets/fontawesome-webfont.eot';
 @fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';

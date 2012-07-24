@@ -8,19 +8,20 @@
 </head>
 <body>
 
-<div class="messages">
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-      <%= msg %>
+<%= render 'layouts/admin_header', active_nav_link: yield(:active_nav_link) %>
+
+<div class="container">
+  <% if not flash.empty? %>
+    <div class="messages">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+          <%= msg %>
+        </div>
+      <% end %>
     </div>
   <% end %>
+  <%= yield %>
 </div>
-
-<% if user_signed_in? %>
-  <%= render 'layouts/admin_header', active_nav_link: yield(:active_nav_link) %>
-<% end %>
-
-<%= yield %>
 
 </body>
 </html>

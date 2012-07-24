@@ -1,15 +1,23 @@
 <%= active_nav_link 'О нас' %>
 
+<legend>
+  О нас
+</legend>
+
 <div class="content_about">
-  <h2>О нас</h2><br />
+  <div class="row">
+    <% for about in @abouts %>
+      <div class="span4">
+        <div class="well">
+          <%= simple_form_for [:admin, about], html: { class: 'form-vertical edit_about' } do |f| %>
+            <%= f.input :id, as: :hidden %>
 
-  <% for about in @abouts %>
-    <%= simple_form_for [:admin, about], html: { class: 'form-vertical edit_about' } do |f| %>
-      <%= f.input :id, as: :hidden %>
-
-      <%= f.input :title, label: 'Заголовок' %>
-      <%= f.input :description, label: 'Описание', input_html: { class: "span4", rows: 11 } %>
-      <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
+            <%= f.input :title, label: 'Заголовок' %>
+            <%= f.input :description, label: 'Описание', input_html: { class: "span3", rows: 11 } %>
+            <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-  <% end %>
+  </div>
 </div>

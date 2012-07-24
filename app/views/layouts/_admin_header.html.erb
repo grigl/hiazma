@@ -1,28 +1,39 @@
-<ul class="nav nav-pills">
-  <% for page in [['Настройки', admin_root_path],
-                  ['О нас', admin_about_path],
-                  ['Новости', admin_articles_path],
-                  ['Проекты', admin_projects_path],
-                  ['Вакансии', admin_jobs_path],
-                  ['Контакты', admin_contacts_path]] %>
-    <% if page[0] == active_nav_link %>
-      <li class="active">
-    <% else %>
-      <li>
-    <% end %>
-      <%= link_to page[0], page[1] %>
-      </li>
-  <% end %>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="<%= admin_root_path %>">Hiazma Admin</a>
+        <% if user_signed_in? %>
+          <ul class="nav">
+            <% for page in [['Настройки', admin_root_path],
+                            ['О нас', admin_about_path],
+                            ['Новости', admin_articles_path],
+                            ['Проекты', admin_projects_path],
+                            ['Вакансии', admin_jobs_path],
+                            ['Контакты', admin_contacts_path]] %>
+              <% if page[0] == active_nav_link %>
+                <li class="active">
+              <% else %>
+                <li>
+              <% end %>
+                <%= link_to page[0], page[1] %>
+                </li>
+            <% end %>
+          </ul>
+          <div class="btn-group pull-right">
+            <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'btn btn-micro' %>
+          </div>
+          <ul class="nav pull-right">
+            <% if params[:locale] == 'ru' %>
+              <li><%= link_to 'Английский контент', locale: 'en' %></li>
+              <li class="active"><%= link_to 'Русский контент', locale: 'ru' %></li>
+            <% else %>
+              <li class="active"><%= link_to 'Английский контент', locale: 'en' %></li>
+              <li><%= link_to 'Русский контент', locale: 'ru' %></li>
+            <% end %>
+            <div class="divider-vertical"></div>
+          </ul>
+        <% end %>
+    </div>
+  </div>
+</div>
 
-  <li class="nav-pills-text-sep"><h4>Вы редактируете:</h4></li>
-
-  <% if params[:locale] == 'ru' %>
-    <li><%= link_to 'Английский контент', locale: 'en' %></li>
-    <li class="active"><a>Русский контент</a></li>
-  <% else %>
-    <li class="active"><a>Английский контент</a></li>
-    <li><%= link_to 'Русский контент', locale: 'ru' %></li>
-  <% end %>
-
-  <%= link_to 'Выйти', destroy_user_session_path, class: 'btn btn-inverse', method: :delete %>
-</ul>
