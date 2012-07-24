@@ -22,9 +22,11 @@ set :unicorn_config, "/home/rails/unicorns/hiazma.rb"
 
 before 'deploy:restart', 'deploy:migrate'
 after 'deploy:restart', 'unicorn:restart'
+after 'deploy:update_code', 'deploy:symlink_uploads'
+after 'deploy:update_code', 'deploy:symlink_configs'
 
 after "deploy:setup" do
-  run "mkdir -p #{deploy_to}/shared/pids && mkdir -p #{deploy_to}/shared/config && mkdir -p #{deploy_to}/shared/var"
+  run "mkdir -p #{deploy_to}/shared/pids && mkdir -p #{deploy_to}/shared/config && mkdir -p #{deploy_to}/shared/var && mkdir -p #{deploy_to}/shared/uploads"
 end
 
 namespace :unicorn do
@@ -43,6 +45,19 @@ namespace :unicorn do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "kill `cat #{unicorn_pid}` && true"
     start
+  end
+end
+
+namespace :deploy do
+   task :symlink_uploads do
+     run <<-CMD
+      rm -rf #{latest_release}/public/uploads &&
+      ln -s #{shared_path}/uploads #{latest_release}/public/uploads
+    CMD
+  end
+  task :symlink_configs do
+    run "rm #{latest_release}/config/database.yml"
+    run "ln -s #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
 end
 
