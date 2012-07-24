@@ -1,9 +1,13 @@
-require "rvm/capistrano"
-require "bundler/capistrano"
-
 set :application, "hiazma"
 
-set :rvm_ruby_string, "1.9.3@hiazma"
+set :rvm_ruby_string, '1.9.3@hiazma'
+before 'deploy:setup', 'rvm:install_rvm'   # install RVM
+before 'deploy:setup', 'rvm:install_ruby'  # install Ruby and create gemset, or:
+before 'deploy:setup', 'rvm:create_gemset' # only create gemset
+require "rvm/capistrano"
+require "bundler/capistrano"
+set :bundle_dir, '/home/rails/.rvm/gems/ruby-1.9.3-p194@hiazma/gems'
+
 set :repository,  "git@github.com:whitescape/hiazma.git"
 set :scm, :git
 set :branch, "master"
