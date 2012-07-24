@@ -56,7 +56,6 @@ namespace :deploy do
     CMD
   end
   task :symlink_configs do
-    run "rm #{latest_release}/config/database.yml"
     run "ln -s #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
 end
