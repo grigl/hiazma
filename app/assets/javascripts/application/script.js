@@ -4,7 +4,7 @@ $(document).ready(function(){
 	
 	$('.header-logo').click(function(e){
 		 e.preventDefault();
-		 $('html, body').animate({scrollTop:'0px'}, 1600);
+		 $('html, body').animate({scrollTop:'0px'}, 600);
 		 return false;
 	});
 	
@@ -47,7 +47,7 @@ $(document).ready(function(){
 	$('.header-menu a, .nav-link').click(function () {	
 		elementClick = $(this).attr('href')
 		destination = $(elementClick).offset().top;
-		$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 1100 );
+		$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 600 );
 		return false;
 	});
 
