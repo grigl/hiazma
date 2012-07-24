@@ -23,7 +23,7 @@ set :unicorn_config, "/home/rails/unicorns/hiazma.rb"
 before 'deploy:restart', 'deploy:migrate'
 after 'deploy:restart', 'unicorn:restart'
 after 'deploy:update_code', 'deploy:symlink_uploads'
-after 'deploy:update_code', 'deploy:symlink_configs'
+after 'deploy:finalize_update', 'deploy:symlink_configs'
 
 after "deploy:setup" do
   run "mkdir -p #{deploy_to}/shared/pids && mkdir -p #{deploy_to}/shared/config && mkdir -p #{deploy_to}/shared/var && mkdir -p #{deploy_to}/shared/uploads"
