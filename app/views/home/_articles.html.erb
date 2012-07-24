@@ -1,7 +1,7 @@
 <div id="news" class="section-header">
   <span class="line"></span>
   <div class="wrapper">
-    <h2>What’s new</h2>
+    <h2><%= t 'home.news.section_title' %></h2>
   </div>
 </div>
 <section class="texture">
@@ -29,7 +29,7 @@
                 <h3><%= article.title %></h3>
                 <p><%= article.description.html_safe if article.description? %></p>
                 <div class="link">
-                  <a href="#" class="show-news">Read more <em>►</em></a>
+                  <a href="#" class="show-news"><%= t 'home.news.read_more' %> <em>►</em></a>
                 </div>
               </article>
               <% end %>
@@ -69,7 +69,7 @@
                 <h3><%= article.title %></h3>
                 <%= article.description.html_safe if article.description? %>
                 <div class="link">
-                  <a href="#" class="hide-news">Hide <em>▲</em></a>
+                  <a href="#" class="hide-news"><%= t 'home.news.hide' %> <em>▲</em></a>
                 </div>
               </article>
             </li>
@@ -86,6 +86,6 @@
         <% end %>
       </ul>
     </div>
-    
+
   </div>
 </section>

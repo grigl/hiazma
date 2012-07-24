@@ -2,11 +2,11 @@
   <div class="wrapper">
     <a href="#top" class="header-logo">Hiazma Games</a>
     <ul class="header-menu">
-      <li><a href="#whoweare">Who we are</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#job">Job</a></li>
-      <li><a href="#contacts">Contacts</a></li>
+      <li><a href="#whoweare"><%= t 'home.who_we_are.title' %></a></li>
+      <li><a href="#news"><%= t 'home.news.title' %></a></li>
+      <li><a href="#projects"><%= t 'home.projects.title' %></a></li>
+      <li><a href="#job"><%= t 'home.job.title' %></a></li>
+      <li><a href="#contacts"><%= t 'home.contacts.title' %></a></li>
     </ul>
     <div class="header-language header-language-<%= I18n.locale %>">
       <%= link_to '', { locale: 'ru' }, class: 'ru' %>
@@ -33,6 +33,6 @@
 
 <footer>
   <div class="wrapper">
-    Hiazma games 2012 all rights reserved
+    Hiazma Games <%= Time.now.strftime('%Y') %> <%= t 'footer.copyright' %>
   </div>
 </footer>

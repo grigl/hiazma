@@ -1,20 +1,20 @@
 <div id="contacts" class="section-header">
   <span class="line"></span>
   <div class="wrapper">
-    <h2>Contacts</h2>
+    <h2><%= t 'home.contacts.title' %></h2>
   </div>
 </div>
 <section class="texture h100">
   <div class="wrapper">
-    
+
     <div class="contacts">
       <%= @contacts.description.html_safe if @contacts.description.present? %>
     </div>
-    
+
     <div class="feedback-done">
-      <h5>Thank you</h5>
+      <h5><%= t 'home.contacts.thank_you' %></h5>
       <p>Your message have been sent, we will contact you soon.</p>
-      <a href="#" class="button">Ok</a>
+      <a href="#" class="button"><%= t 'home.contacts.ok' %></a>
     </div>
 
     <div class="feedback">
@@ -25,12 +25,12 @@
       <input type="submit" class="button" value="Send">
     </form> -->
     <%= form_for Feedback.new, remote: true do |f| %>
-      <%= f.text_field :name, value: "Name", class: 'textfield' %>
-      <%= f.text_field :email, value: "Email", class: 'textfield' %>
-      <%= f.text_area :description, value: "Your message", class: 'textfield' %>
-      <%= f.submit 'Send', class: 'button' %>
+      <%= f.text_field :name, value: t('home.contacts.name'), class: 'textfield' %>
+      <%= f.text_field :email, value: t('home.contacts.email'), class: 'textfield' %>
+      <%= f.text_area :description, value: t('home.contacts.your_message'), class: 'textfield' %>
+      <%= f.submit t('home.contacts.send'), class: 'button' %>
     <% end %>
     </div>
-    
+
   </div>
 </section>

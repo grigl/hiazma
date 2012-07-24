@@ -1,5 +1,36 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+
+  home:
+
+    who_we_are:
+      title: Who we are
+
+    news:
+      title: News
+      section_title: What’s new
+      read_more: Read more
+      hide: Hide
+
+    projects:
+      title: Projects
+      visit_website: Visit Website
+
+    job:
+      title: Job
+      job_profile: Job Profile
+      your_profile: Your Profile
+      requirements: Requirements
+      other_skillsets: Other skillsets
+      how_to_apply: How to apply
+
+    contacts:
+      title: Contacts
+      thank_you: Thank you
+      ok: Ok
+      name: Name
+      email: Email
+      your_message: Your message
+      send: Send
+
+  footer:
+    copyright: all rights reserved

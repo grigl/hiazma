@@ -1,2 +1,36 @@
 ru:
-  hello: "Привет мир"
+
+  home:
+
+    who_we_are:
+      title: О нас ???
+
+    news:
+      title: Новости
+      section_title: Новости ???
+      read_more: Читать дальше
+      hide: Свернуть
+
+    projects:
+      title: Проекты
+      visit_website: Посетить сайт
+
+    job:
+      title: Вакансии
+      job_profile: Профиль работы ???
+      your_profile: Your Profile ???
+      requirements: Требования
+      other_skillsets: Желательно
+      how_to_apply: Чо куда писать ???
+
+    contacts:
+      title: Контакты
+      thank_you: Спасибо
+      ok: Ок
+      name: Имя
+      email: Email
+      your_message: Ваше сообщение
+      send: Отправить
+
+  footer:
+    copyright: все права защищены
