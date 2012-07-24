@@ -12,8 +12,6 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'globalize3'
-gem 'capistrano'
-gem 'rvm-capistrano'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,10 +35,11 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 # To use debugger
 # gem 'debugger'

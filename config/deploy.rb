@@ -12,6 +12,24 @@ server "hiazma.com", :app, :web, :db, :primary => true
 set :user, "rails"
 set :deploy_to, "/home/rails/apps/hiazma"
 
+after "deploy:setup" do
+  run "mkdir -p #{deploy_to}/shared/pids && mkdir -p #{deploy_to}/shared/config && mkdir -p #{deploy_to}/shared/var"
+end
+
+namespace :unicorn do
+  task :start do
+    run "cd #{deploy_to}/current && unicorn_rails -c #{deploy_to}/current/config/unicorn.rb -e #{rails_env} -D"
+  end
+
+  task :stop do
+    run "kill -9 `cat #{deploy_to}/shared/pids/unicorn.pid`"
+  end
+
+  task :restart do
+    run "kill -HUP `cat #{deploy_to}/shared/pids/unicorn.pid`"
+  end
+end
+
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
