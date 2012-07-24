@@ -8,9 +8,9 @@
       <li><a href="#job">Job</a></li>
       <li><a href="#contacts">Contacts</a></li>
     </ul>
-    <div class="header-language">
-      <%= link_to '', { locale: 'ru' }, class: 'ru' %>  
-      <%= link_to '', { locale: nil }, class: 'en' %>
+    <div class="header-language header-language-<%= I18n.locale %>">
+      <%= link_to '', { locale: 'ru' }, class: 'ru' %>
+      <%= link_to '', { locale: 'en' }, class: 'en' %>
     </div>
   </div>
 </header>
@@ -30,7 +30,7 @@
 <%= render 'jobs' %>
 
 <%= render 'contacts' %>
-  
+
 <footer>
   <div class="wrapper">
     Hiazma games 2012 all rights reserved
