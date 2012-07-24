@@ -19,6 +19,8 @@ set :deploy_to, "/home/rails/apps/hiazma"
 set :unicorn_binary, "unicorn"
 set(:unicorn_pid) {"#{current_path}/tmp/pids/unicorn.pid"}
 set :unicorn_config, "/home/rails/unicorns/hiazma.rb"
+
+before 'deploy:restart', 'deploy:migrate'
 after 'deploy:restart', 'unicorn:restart'
 
 after "deploy:setup" do
