@@ -17,3 +17,5 @@
 # Ignore sublime text related files
 *.sublime-project
 *.sublime-workspace
+
+/config/database.yml
