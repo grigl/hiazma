@@ -538,8 +538,9 @@ header {min-width: 400px;}
 	padding: 0 6px;
 }
 .hiazma-image {
-	background: url(<%= asset_path 'hiazma_image.jpg' %>) 35% 50% no-repeat;
+	background: url(<%= asset_path 'hiazma_image_s.jpg' %>) 50% 0 no-repeat;
 	height: 420px;
+	min-width: 400px;
 	margin-bottom: -51px;
 }
 .grid-6 {
@@ -593,4 +594,11 @@ header {min-width: 400px;}
 	float: none;
 }
 
+}
+@media only screen and (max-width: 600px) {
+.hiazma-image {
+	background-size: 460px auto;
+	background-position: 50% 48px;
+	height: 240px;
+}
 }
