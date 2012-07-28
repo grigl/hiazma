@@ -1,15 +1,15 @@
 $(document).ready(function(){
 
 // navigation
-	
+
 	$('.header-logo').click(function(e){
 		 e.preventDefault();
 		 $('html, body').animate({scrollTop:'0px'}, 600);
 		 return false;
 	});
-	
+
 	$(window).scroll(function(e){
-		
+
 		if( typeof( window.pageYOffset ) == 'number' )
 		{
 		offset = window.pageYOffset;
@@ -32,7 +32,7 @@ $(document).ready(function(){
 		{
 			var top = $(this).offset().top;
 			var bottom = top + $(this).height();
-	
+
 			if ((offset >= (top - delta)) && (offset < (bottom + delta)))
 			{
 				 anchor = $(this).prev('.section-header').attr('id');
@@ -43,8 +43,8 @@ $(document).ready(function(){
 			$('.header-menu a[href="#'+anchor+'"]').parent().addClass('current').siblings().removeClass('current');
 		}
 	});
-	
-	$('.header-menu a, .nav-link').click(function () {	
+
+	$('.header-menu a, .nav-link').click(function () {
 		elementClick = $(this).attr('href')
 		destination = $(elementClick).offset().top;
 		$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 600 );
@@ -67,9 +67,9 @@ $(document).ready(function(){
 		for( i=2; i <= newRel; i++ ) {
 			relIds.push(i)
 		}
-		alert(relIds);
+		// alert(relIds);
 		if ( pageIds.indexOf(parseInt(newRel)) < 0 ) {
-			$.each(relIds, function() { 
+			$.each(relIds, function() {
 				$.get('?page=' + this, function(data) {
 					$('.news-list .news-list-page:last').after($(data).find('.news-list .news-list-page:first'));
 					$('.news-view .news-list-page:last').after($(data).find('.news-view .news-list-page'));
@@ -83,8 +83,8 @@ $(document).ready(function(){
 		$('.news-list .pager a').removeClass('active');
 	  $('.news-list .pager a[rel='+ newRel +']').addClass('active');
 	});
-	
-	$('.news-item .show-news').click(function(e){
+
+	$('.news-item .show-news').live('click', function(e){
 		e.preventDefault();
 		var index = $('.news-item .show-news').index(this) % 3;
 		$('.news-view .pager a').removeClass('active');
@@ -93,7 +93,7 @@ $(document).ready(function(){
 		$('.news-list').slideUp();
 		$('.news-view').slideDown();
 	});
-	
+
 	oldRel2 = 1;
 	$('.news-view .pager a').click(function(e){
 		e.preventDefault();
@@ -105,7 +105,7 @@ $(document).ready(function(){
 		$('.news-view .pager a').removeClass('active');
 		$('.news-view .pager a[rel='+ newRel +']').addClass('active');
 	});
-	
+
 	$('.news-item .hide-news').click(function(e){
 		 e.preventDefault();
 		 $('.news-list').slideDown();
