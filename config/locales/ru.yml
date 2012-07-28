@@ -3,11 +3,11 @@ ru:
   home:
 
     who_we_are:
-      title: О нас ???
+      title: О нас
 
     news:
       title: Новости
-      section_title: Новости ???
+      section_title: Новости
       read_more: Читать дальше
       hide: Свернуть
 
@@ -17,11 +17,11 @@ ru:
 
     job:
       title: Вакансии
-      job_profile: Профиль работы ???
-      your_profile: Your Profile ???
-      requirements: Требования
-      other_skillsets: Желательно
-      how_to_apply: Чо куда писать ???
+      job_profile: Job Profile
+      your_profile: Your Profile
+      requirements: Requirements
+      other_skillsets: Other skillsets
+      how_to_apply: How to apply
 
     contacts:
       title: Контакты

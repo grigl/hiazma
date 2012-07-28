@@ -138,7 +138,7 @@ figure img {
 	top: 18px;
 }
 
-section {min-width: 1000px;}
+section {min-width: 1000px; overflow: hidden;}
 section.texture {
 	min-height: 420px;
 	background: url(<%= asset_path 'section_texture.jpg' %>) bottom no-repeat;
@@ -217,6 +217,7 @@ button.button, input[type="submit"].button {
 header {
 	position: fixed;
 	width: 100%;
+	min-width: 1000px;
 	height: 50px;
 	background: url(<%= asset_path 'header_bg.png' %>) repeat-x;
 	z-index: 90;
@@ -508,76 +509,8 @@ footer .wrapper {
 	margin-bottom: 16px;
 }
 
-@media only screen and (max-width: 768px) {
 
-html, body {
-	min-width: 400px;
-}
-figure img {width: 100% !important;}
-.wrapper {
-	width: 400px;
-}
-.section-header {margin-bottom: 30px;}
-section {min-width: 400px;}
-.header-menu {font: 11px/34px 'FuturaStdMediumRegular';}
-.header-menu li {
-	margin: 0;
-	padding: 0 6px;
-}
-.hiazma-image {
-	background: url(<%= asset_path 'hiazma_image.jpg' %>) 35% 50% no-repeat;
-	height: 420px;
-	margin-bottom: -51px;
-}
-.grid-6 {
-	background: none;
-	height: auto;
-	margin: 0;
-}
-.grid-6 li {
-	float: none;
-	width: auto;
-	height: auto;
-	padding: 0 0 10px;
-	margin-bottom: 20px;
-	border-bottom: 1px solid #393939;
-}
-.grid-6 li:last-child {border: 0;}
 
-.news-list-page {width: 400px;}
-.news-item {padding-right: 2px;}
-
-.projects-item {
-	padding-bottom: 50px;
-	width: 400px;
-}
-
-.jobs-grid-item {
-	float: none;
-	width: auto;
-	padding: 0 0 20px;
-	background: none;
-}
-
-.contacts {
-	float: none;
-	margin-bottom: 40px;
-}
-
-.feedback {
-	float: none;
-	width: 298px;
-}
-.feedback .textfield:first-child {margin-right: 0;}
-.feedback textarea.textfield {
-	width: 264px;
-	height: 60px;
-}
-.feedback .button {float: right;}
-
-.feedback-done {
-	width: auto;
-	float: none;
-}
-
+@media only screen and (max-width: 1164px) {
+	.header-menu {margin-right: 100px;}
 }

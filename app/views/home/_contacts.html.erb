@@ -25,9 +25,9 @@
       <input type="submit" class="button" value="Send">
     </form> -->
     <%= form_for Feedback.new, remote: true do |f| %>
-      <%= f.text_field :name, value: t('home.contacts.name'), class: 'textfield' %>
-      <%= f.text_field :email, value: t('home.contacts.email'), class: 'textfield' %>
-      <%= f.text_area :description, value: t('home.contacts.your_message'), class: 'textfield' %>
+      <%= f.text_field :name, placeholder: t('home.contacts.name'), class: 'textfield' %>
+      <%= f.text_field :email, placeholder: t('home.contacts.email'), class: 'textfield' %>
+      <%= f.text_area :description, placeholder: t('home.contacts.your_message'), class: 'textfield' %>
       <%= f.submit t('home.contacts.send'), class: 'button' %>
     <% end %>
     </div>
