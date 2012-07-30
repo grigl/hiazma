@@ -2,7 +2,7 @@
   <%= f.input :title, label: 'Заголовок' %>
   <%= f.input :link, label: 'Cсылка' %>
   <%= image_tag @project.image.thumb if @project.image.present? %>
-  <%= f.input :image, label: 'Картинка' %>
+  <%= f.input :image, label: 'Картинка', hint: 'Оптимальный размер изображения &mdash; 450 &times; 338 пикселей' %>
   <%= f.input :description, label: 'Описание', input_html: { class: "span4", rows: 11 } %>
   <div class="form-actions">
     <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
