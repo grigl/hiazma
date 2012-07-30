@@ -415,7 +415,12 @@ footer .wrapper {
 	margin-right: -40px;
 	padding-bottom: 30px;
 }
-
+	.jobs-grid .clear {
+		clear: both;
+		height: 1.5em;
+		margin: 0;
+		padding: 0;
+	}
 	.jobs-grid-item {
 		float: left;
 		width: 260px;
@@ -423,11 +428,11 @@ footer .wrapper {
 		background: url(<%= asset_path 'jobs_grid_item.png' %>) no-repeat;
 		min-height: 172px;
 	}
-	.jobs-grid-item:first-child {
+	.jobs-grid-item.n-0 {
 		padding-left: 0;
 		background: none;
 	}
-	.jobs-grid-item:last-child {padding-right: 0;}
+	.jobs-grid-item.n-2 {padding-right: 0;}
 	.jobs-grid-item h3 {
 		font: 20px/120% Verdana, Geneva, sans-serif;
 		color: #fff;

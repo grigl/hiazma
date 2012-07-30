@@ -8,8 +8,12 @@
   <div class="wrapper">
 
     <ul class="jobs-grid">
-      <% @jobs.each do |job| %>
-        <li class="jobs-grid-item">
+      <% 
+        i = -1
+        @jobs.each do |job|
+          i = i + 1
+      %>
+        <li class="jobs-grid-item n-<%= i % 3 %>">
           <h3><%= job.title %></h3>
           <ul class="jobs-title">
             <li class="jobs-title-item">
@@ -44,6 +48,9 @@
             </li>
           </ul>
         </li>
+        <% if i % 3 == 2 %>
+        <li class="clear"></li>
+        <% end %>
       <% end %>
     </ul>
 
