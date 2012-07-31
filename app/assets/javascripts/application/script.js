@@ -3,9 +3,9 @@ $(document).ready(function(){
 // navigation
 
 	$('.header-logo').click(function(e){
-		 e.preventDefault();
-		 $('html, body').animate({scrollTop:'0px'}, 600);
-		 return false;
+		e.preventDefault();
+		$('html, body').animate({scrollTop:'0px'}, 600);
+		return false;
 	});
 
 	$(window).scroll(function(e){
@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 			if ((offset >= (top - delta)) && (offset < (bottom + delta)))
 			{
-				 anchor = $(this).prev('.section-header').attr('id');
+				anchor = $(this).prev('.section-header').attr('id');
 			}
 		});
 		if (anchor)
@@ -45,7 +45,7 @@ $(document).ready(function(){
 	});
 
 	$('.header-menu a, .nav-link').click(function () {
-		elementClick = $(this).attr('href')
+		elementClick = $(this).attr('href');
 		destination = $(elementClick).offset().top;
 		$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 600 );
 		return false;
@@ -81,7 +81,7 @@ $(document).ready(function(){
 		$(this).closest('div').find('.news-list-wrapper').animate({'left': (delta < 0 ? '+' : '-' ) + '=' + Math.abs(delta) * 100 + '%'}, speed);
 		oldRel = newRel;
 		$('.news-list .pager a').removeClass('active');
-	  $('.news-list .pager a[rel='+ newRel +']').addClass('active');
+		$('.news-list .pager a[rel='+ newRel +']').addClass('active');
 	});
 
 	$('.news-item .show-news').live('click', function(e){
@@ -107,15 +107,15 @@ $(document).ready(function(){
 	});
 
 	$('.news-item .hide-news').click(function(e){
-		 e.preventDefault();
-		 $('.news-list').slideDown();
-		 $('.news-view').slideUp();
+		e.preventDefault();
+		$('.news-list').slideDown();
+		$('.news-view').slideUp();
 	});
 
 // jobs list
 	$('.jobs-title-item h4 a').click(function(e){
-		 e.preventDefault();
-		 $(this).parent().toggleClass('open').next().slideToggle();
+		e.preventDefault();
+		$(this).parent().toggleClass('open').next().slideToggle();
 	});
 
 // feedback-done submit
@@ -123,7 +123,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('.feedback').slideDown();
 		$('.feedback-done').slideUp();
-	})
+	});
 
 });
 
