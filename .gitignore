@@ -19,3 +19,5 @@
 *.sublime-workspace
 
 /config/database.yml
+
+.powrc

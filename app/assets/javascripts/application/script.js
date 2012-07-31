@@ -78,7 +78,10 @@ $(document).ready(function(){
 		}
 		var delta = newRel - oldRel;
 		var speed = Math.abs(delta) > 1 ? 1200 : 600;
-		$(this).closest('div').find('.news-list-wrapper').animate({'left': (delta < 0 ? '+' : '-' ) + '=' + Math.abs(delta) * 100 + '%'}, speed);
+		$(this).closest('div').find('.news-list-wrapper').animate({
+			'left': (delta < 0 ? '+' : '-' ) + '=' + Math.abs(delta) * 100 + '%',
+			'height': $('#' + newRel + '-news-page').height()
+		}, speed);
 		oldRel = newRel;
 		$('.news-list .pager a').removeClass('active');
 		$('.news-list .pager a[rel='+ newRel +']').addClass('active');
