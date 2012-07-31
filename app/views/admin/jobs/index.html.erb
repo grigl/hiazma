@@ -8,6 +8,7 @@
 <table class="table table-condensed">
   <thead>
     <tr>
+      <th>#</th>
       <th>Заголовок</th>
       <th>Job Profile</th>
       <th>Requirements</th>
@@ -17,6 +18,7 @@
   <tbody id="jobs_list" data-update-url="<%= sort_admin_jobs_path %>">
     <% for job in @jobs %>
       <tr id="jobs_<%= job.id %>">
+        <td style="width: 20px; white-space: nowrap;"><%= job.id %></td>
         <td><%= job.title %></td>
         <td><%= job.job_profile %></td>
         <td><%= job.requirements %></td>

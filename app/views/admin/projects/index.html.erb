@@ -8,6 +8,7 @@
 <table class="table table-condensed">
   <thead>
     <tr>
+      <th>#</th>
       <th>Заголовок</th>
       <th>Ссылка</th>
       <th>Картинка</th>
@@ -17,6 +18,7 @@
   <tbody id="projects_list" data-update-url="<%= sort_admin_projects_path %>">
     <% for project in @projects %>
       <tr id="projects_<%= project.id %>">
+        <td style="width: 20px; white-space: nowrap;"><%= project.id %></td>
         <td><%= project.title %></td>
         <td><%= project.link %></td>
         <td><%= image_tag project.image.thumb if project.image.present? %></td>

@@ -9,6 +9,7 @@
 <table class="table table-condensed">
   <thead>
     <tr>
+      <th>#</th>
       <th>Дата публикации</th>
       <th>Заголовок</th>
       <th>Картинка</th>
@@ -17,6 +18,7 @@
   </thead>
   <% for article in @articles %>
     <tr>
+      <td style="width: 20px; white-space: nowrap;"><%= article.id %></td>
       <td style="white-space: nowrap"><%= article.created_at %></td>
       <td><%= article.title %></td>
       <td><%= image_tag article.image.thumb if article.image.present? %></td>
