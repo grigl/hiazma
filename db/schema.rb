@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730234433) do
+ActiveRecord::Schema.define(:version => 20120731143536) do
 
   create_table "about_translations", :force => true do |t|
     t.integer  "about_id"
@@ -74,13 +74,18 @@ ActiveRecord::Schema.define(:version => 20120730234433) do
     t.integer  "job_id"
     t.string   "locale"
     t.string   "title"
-    t.text     "job_profile"
-    t.text     "your_profile"
-    t.text     "requirements"
-    t.text     "other_skillsets"
-    t.text     "how_to_apply"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.text     "field_1"
+    t.text     "field_2"
+    t.text     "field_3"
+    t.text     "field_4"
+    t.text     "field_5"
+    t.text     "field_6"
+    t.text     "field_7"
+    t.text     "field_8"
+    t.text     "field_9"
+    t.text     "field_10"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "job_translations", ["job_id"], :name => "index_job_translations_on_job_id"
@@ -88,14 +93,19 @@ ActiveRecord::Schema.define(:version => 20120730234433) do
 
   create_table "jobs", :force => true do |t|
     t.string   "title"
-    t.text     "job_profile"
-    t.text     "your_profile"
-    t.text     "requirements"
-    t.text     "other_skillsets"
-    t.text     "how_to_apply"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "position"
+    t.text     "field_1"
+    t.text     "field_2"
+    t.text     "field_3"
+    t.text     "field_4"
+    t.text     "field_5"
+    t.text     "field_6"
+    t.text     "field_7"
+    t.text     "field_8"
+    t.text     "field_9"
+    t.text     "field_10"
   end
 
   create_table "project_translations", :force => true do |t|

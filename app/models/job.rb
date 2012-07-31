@@ -1,7 +1,9 @@
 class Job < ActiveRecord::Base
-  attr_accessible :title, :how_to_apply, :job_profile, :other_skillsets, :requirements, :your_profile
+  attr_accessible :title, :field_1, :field_2, :field_3, :field_4, :field_5, :field_6, :field_7,
+                  :field_8, :field_9, :field_10
 
-  translates :title, :how_to_apply, :job_profile, :other_skillsets, :requirements, :your_profile
+  translates :title, :field_1, :field_2, :field_3, :field_4, :field_5, :field_6, :field_7,
+             :field_8, :field_9, :field_10
 
   validates :title, presence: true
 

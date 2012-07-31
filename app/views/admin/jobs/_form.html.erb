@@ -1,10 +1,15 @@
 <%= simple_form_for [:admin, @job], html: { class: 'form-horizontal' } do |f| %>
     <%= f.input :title, label: 'Заголовок' %>
-    <%= f.input :job_profile, input_html: { class: "span4", rows: 11 } %>
-    <%= f.input :your_profile, input_html: { class: "span4", rows: 11 } %>
-    <%= f.input :requirements, input_html: { class: "span4", rows: 11 } %>
-    <%= f.input :other_skillsets, input_html: { class: "span4", rows: 11 } %>
-    <%= f.input :how_to_apply, input_html: { class: "span4", rows: 11 } %>
+    <%= f.input :field_1, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_2, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_3, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_4, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_5, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_6, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_7, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_8, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_9, input_html: { class: "span4", rows: 5 } %>
+    <%= f.input :field_10, input_html: { class: "span4", rows: 5 } %>
     <div class="form-actions">
       <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>
     </div>
