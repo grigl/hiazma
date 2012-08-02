@@ -128,7 +128,20 @@ $(document).ready(function(){
 		$('.feedback-done').slideUp();
 	});
 
+// height of contacts section
+	var minMagicHeight = $('.js-magic-height').height(),
+	    otherElementsHeight = $('footer').height() + $('header').height() + parseInt($('.js-magic-height').prev().css('margin-bottom'));
+	function fixMagicHeight () {
+		var optimalHeight = $(window).height() - otherElementsHeight;
+		$('.js-magic-height').height( Math.max(minMagicHeight, optimalHeight) );
+	}
+	fixMagicHeight();
+	$(window).resize(fixMagicHeight);
+
 });
+
+
+
 
 // placeholder
 (function(b){function d(a){this.input=a;a.attr("type")=="password"&&this.handlePassword();b(a[0].form).submit(function(){if(a.hasClass("placeholder")&&a[0].value==a.attr("placeholder"))a[0].value=""})}d.prototype={show:function(a){if(this.input[0].value===""||a&&this.valueIsPlaceholder()){if(this.isPassword)try{this.input[0].setAttribute("type","text")}catch(b){this.input.before(this.fakePassword.show()).hide()}this.input.addClass("placeholder");this.input[0].value=this.input.attr("placeholder")}},
