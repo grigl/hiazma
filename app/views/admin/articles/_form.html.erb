@@ -4,6 +4,7 @@
     <%= f.input :image, label: 'Картинка', hint: 'Оптимальный размер изображения &mdash; 980 &times; 320 пикселей' %>
     <%= image_tag @article.small_image.thumb if @article.small_image.present? %>
     <%= f.input :small_image, label: 'Маленькая картинка', hint: 'Оптимальный размер изображения &mdash; 980 &times; 80 пикселей' %>
+    <%= f.input :teaser, label: 'Текст для списка', input_html: { class: 'span6', rows: 6 } %>
     <%= f.input :description, label: 'Текст новости', input_html: { class: 'span6' } %>
     <div class="form-actions">
       <%= f.button :submit, value: 'Сохранить', class: 'btn-primary' %>

@@ -27,7 +27,7 @@
                 </figure>
                 <span class="date"><%= article.created_at %></span>
                 <h3><%= article.title %></h3>
-                <p><%= article.description.html_safe if article.description? %></p>
+                <p><%= article.teaser.html_safe if article.teaser? %></p>
                 <div class="link">
                   <a href="#" class="show-news"><%= t 'home.news.read_more' %> <em>►</em></a>
                 </div>

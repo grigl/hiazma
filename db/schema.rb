@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120731143536) do
+ActiveRecord::Schema.define(:version => 20120803002229) do
 
   create_table "about_translations", :force => true do |t|
     t.integer  "about_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120731143536) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "teaser"
   end
 
   add_index "article_translations", ["article_id"], :name => "index_article_translations_on_article_id"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20120731143536) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "small_image"
+    t.text     "teaser"
   end
 
   create_table "contact_translations", :force => true do |t|
