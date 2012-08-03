@@ -32,7 +32,7 @@ $ ->
       data = $ data
       $("##{i}-news-page").replaceWith data.find("##{i}-news-page")
       pagesContainer.animate({
-  'height': $("##{i}-news-page").height()
+        'height': $("##{i}-news-page").height()
       }, 800)
       for newsItem in data.find('.news-item-wrap')
   $( '#'+$(newsItem).attr('id') ).replaceWith $(newsItem)
