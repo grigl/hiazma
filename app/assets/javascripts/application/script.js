@@ -41,79 +41,22 @@ $(document).ready(function(){
 		if (anchor)
 		{
 			$('.header-menu a[href="#'+anchor+'"]').parent().addClass('current').siblings().removeClass('current');
+			//Работает некорректно
+			//window.location.hash = anchor;
 		}
 	});
 
 	$('.header-menu a, .nav-link').click(function () {
 		elementClick = $(this).attr('href');
-		destination = $(elementClick).offset().top;
-		$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 600 );
+		destination = $(elementClick.split('/').join('\\/')).offset().top;
+		$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 600, function () {
+			window.location.hash = elementClick;
+		});
 		return false;
 	});
 
 // placeholder
 	$('input[placeholder], textarea[placeholder]').placeholder();
-
-// news list
-	oldRel = 1;
-	$('.news-list .pager a').click(function(e){
-		e.preventDefault();
-		var newRel = $(this).attr('rel');
-		var pageIds = new Array();
-		$('.news-list-page').each(function(){
-			pageIds.push(parseInt($(this).attr('id')));
-		});
-		var relIds = new Array();
-		for( i=2; i <= newRel; i++ ) {
-			relIds.push(i)
-		}
-		// alert(relIds);
-		if ( pageIds.indexOf(parseInt(newRel)) < 0 ) {
-			$.each(relIds, function() {
-				$.get('?page=' + this, function(data) {
-					$('.news-list .news-list-page:last').after($(data).find('.news-list .news-list-page:first'));
-					$('.news-view .news-list-page:last').after($(data).find('.news-view .news-list-page'));
-				});
-			});
-		}
-		var delta = newRel - oldRel;
-		var speed = Math.abs(delta) > 1 ? 1200 : 600;
-		$(this).closest('div').find('.news-list-wrapper').animate({
-			'left': (delta < 0 ? '+' : '-' ) + '=' + Math.abs(delta) * 100 + '%',
-			'height': $('#' + newRel + '-news-page').height()
-		}, speed);
-		oldRel = newRel;
-		$('.news-list .pager a').removeClass('active');
-		$('.news-list .pager a[rel='+ newRel +']').addClass('active');
-	});
-
-	$('.news-item .show-news').live('click', function(e){
-		e.preventDefault();
-		var index = $('.news-item .show-news').index(this) % 3;
-		$('.news-view .pager a').removeClass('active');
-		$('.news-view .pager a:eq('+ index +')').addClass('active');
-		$('.news-view .news-list-wrapper').css('left', '-'+ index +'00%');
-		$('.news-list').slideUp();
-		$('.news-view').slideDown();
-	});
-
-	oldRel2 = 1;
-	$('.news-view .pager a').click(function(e){
-		e.preventDefault();
-		var newRel = $(this).attr('rel');
-		var delta = newRel - oldRel2;
-		var speed = Math.abs(delta) > 1 ? 1200 : 600;
-		$(this).closest('div').find('.news-list-wrapper').animate({'left': (delta < 0 ? '+' : '-' ) + '=' + Math.abs(delta) * 100 + '%'}, speed);
-		oldRel2 = newRel;
-		$('.news-view .pager a').removeClass('active');
-		$('.news-view .pager a[rel='+ newRel +']').addClass('active');
-	});
-
-	$('.news-item .hide-news').click(function(e){
-		e.preventDefault();
-		$('.news-list').slideDown();
-		$('.news-view').slideUp();
-	});
 
 // jobs list
 	$('.jobs-title-item h4 a').click(function(e){
