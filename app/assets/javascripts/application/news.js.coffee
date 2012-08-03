@@ -9,15 +9,15 @@ $ ->
     for i in $('.news-list .pager a')
       i = $(i).attr('rel')
       if $("##{i}-news-page").size() == 0
-  pagesContainer.append "<li class=\"news-list-page\" id=\"#{i}-news-page\"></li>"
+        pagesContainer.append "<li class=\"news-list-page\" id=\"#{i}-news-page\"></li>"
 
   prepareEmptyFullItems = ->
     for i in $('.news-view .pager a')
       i = $(i).attr('rel')
       if $("##{i}-news-item").size() == 0
-  fullItemsContainer.append """
-    <li class="news-list-page news-item-wrap" id="#{i}-news-item"></li>
-  """
+        fullItemsContainer.append """
+          <li class="news-list-page news-item-wrap" id="#{i}-news-item"></li>
+        """
     $('.news-view .pager li:first-child').after """
       <li class="ellipsis a">...</li>
     """
@@ -35,7 +35,7 @@ $ ->
         'height': $("##{i}-news-page").height()
       }, 800)
       for newsItem in data.find('.news-item-wrap')
-  $( '#'+$(newsItem).attr('id') ).replaceWith $(newsItem)
+        $( '#'+$(newsItem).attr('id') ).replaceWith $(newsItem)
 
 
   showPage = (i) ->
@@ -94,9 +94,9 @@ $ ->
     for pager in $('.news-view .pager')
       j = 0
       for item in $(pager).find('li:not(.ellipsis)')
-  j++
-  if j in hide
-    $(item).hide()
+        j++
+        if j in hide
+          $(item).hide()
 
 
 
