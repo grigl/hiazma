@@ -10,17 +10,17 @@
     <div class="news-list">
       <ul class="pager">
         <% @articles.total_pages.times do |i| %>
-	  <li><a href="#news/page/<%= i + 1 %>" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
+          <li><a href="#news/page/<%= i + 1 %>" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
         <% end %>
       </ul>
       <div class="news-list-viewport">
         <ul class="news-list-wrapper">
             <li class="news-list-page" id="<%= params[:page] || 1 %>-news-page">
-	      <%
-	      i = 0
-	      @articles.each do |article|
-		i = i + 1
-	      %>
+            <%
+            i = 0
+            @articles.each do |article|
+              i = i + 1
+            %>
               <article class="news-item">
                 <figure>
                   <%= ( image_tag article.small_image if article.small_image.present? ) || raw( '<img src="" width="978" height="78" alt="">' ) %>
@@ -29,8 +29,8 @@
                 <h3><%= article.title %></h3>
                 <p><%= article.teaser.html_safe if article.teaser? %></p>
                 <div class="link">
-		  <a href="#news/item/<%= ((params[:page] || 1).to_i - 1) * @articles.per_page + i %>" class="show-news">
-		    <%= t 'home.news.read_more' %> <em>►</em></a>
+      <a href="#news/item/<%= ((params[:page] || 1).to_i - 1) * @articles.per_page + i %>" class="show-news">
+        <%= t 'home.news.read_more' %> <em>►</em></a>
                 </div>
               </article>
               <% end %>
@@ -39,25 +39,25 @@
       </div>
       <ul class="pager">
         <% @articles.total_pages.times do |i| %>
-	  <li><a href="#news/page/<%= i + 1 %>" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
+          <li><a href="#news/page/<%= i + 1 %>" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
         <% end %>
       </ul>
     </div>
 
     <div class="news-view">
       <ul class="pager">
-	<% @articles.count.times do |i| %>
-	  <li><a href="#news/item/<%= i + 1 %>" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
+        <% @articles.count.times do |i| %>
+          <li><a href="#news/item/<%= i + 1 %>" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
         <% end %>
       </ul>
       <div class="news-list-viewport">
         <ul class="news-list-wrapper">
-	  <%
-	  i = 0
-	  @articles.each do |article|
-	    i = i + 1
-	  %>
-	    <li class="news-list-page news-item-wrap" id="<%= ((params[:page] || 1).to_i - 1) * @articles.per_page + i %>-news-item">
+    <%
+    i = 0
+    @articles.each do |article|
+      i = i + 1
+    %>
+      <li class="news-list-page news-item-wrap" id="<%= ((params[:page] || 1).to_i - 1) * @articles.per_page + i %>-news-item">
               <article class="news-item">
                 <figure>
                   <%= ( image_tag article.image if article.image.present? ) || raw( '<img src="" width="978" height="318" alt="">' ) %>
@@ -66,7 +66,7 @@
                 <h3><%= article.title %></h3>
                 <%= article.description.html_safe if article.description? %>
                 <div class="link">
-		  <a href="#news/page/<%= params[:page] || 1 %>" class="hide-news"><%= t 'home.news.hide' %> <em>▲</em></a>
+      <a href="#news/page/<%= params[:page] || 1 %>" class="hide-news"><%= t 'home.news.hide' %> <em>▲</em></a>
                 </div>
               </article>
             </li>
@@ -74,8 +74,8 @@
         </ul>
       </div>
       <ul class="pager">
-	<% @articles.count.times do |i| %>
-	  <li><a href="#news/item/<%= i + 1 %>" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
+  <% @articles.count.times do |i| %>
+    <li><a href="#news/item/<%= i + 1 %>" rel="<%= i + 1 %>"><%= i + 1 %></a></li>
         <% end %>
       </ul>
     </div>
