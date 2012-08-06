@@ -4,7 +4,9 @@ $(document).ready(function(){
 
 	$('.header-logo').click(function(e){
 		e.preventDefault();
-		$('html, body').animate({scrollTop:'0px'}, 600);
+		$('html, body').animate({scrollTop:'0px'}, 600, function() {
+			location.hash = '';
+		});
 		return false;
 	});
 
