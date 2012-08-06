@@ -60,7 +60,7 @@
       <li class="news-list-page news-item-wrap" id="<%= ((params[:page] || 1).to_i - 1) * @articles.per_page + i %>-news-item">
               <article class="news-item">
                 <figure>
-                  <%= ( image_tag article.image, :size => '980x320' if article.image.present? ) || raw( '<img src="" width="978" height="318" alt="">' ) %>
+                  <%= ( image_tag article.image if article.image.present? ) || raw( '<img src="" width="978" height="318" alt="">' ) %>
                 </figure>
                 <span class="date"><%= article.created_at %></span>
                 <h3><%= article.title %></h3>
