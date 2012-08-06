@@ -33,7 +33,7 @@ ru:
       send: Отправить
 
   footer:
-    copyright: все права защищены
+    copyright: Все права защищены.
 
   simple_form:
     labels:

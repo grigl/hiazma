@@ -23,7 +23,7 @@
             %>
               <article class="news-item">
                 <figure>
-                  <%= ( image_tag article.small_image if article.small_image.present? ) || raw( '<img src="" width="978" height="78" alt="">' ) %>
+                  <%= ( image_tag article.small_image, :size => '980x80' if article.small_image.present? ) || raw( '<img src="" width="978" height="78" alt="">' ) %>
                 </figure>
                 <span class="date"><%= article.created_at %></span>
                 <h3><%= article.title %></h3>
