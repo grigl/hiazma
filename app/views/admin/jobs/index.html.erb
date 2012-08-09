@@ -10,6 +10,9 @@
     <tr>
       <th>#</th>
       <th>Заголовок</th>
+      <% I18n.available_locales.each do |locale| %>
+        <th width="50"><%= locale %></th>
+      <% end %>
       <th>Действия</th>
     </tr>
   </thead>
@@ -18,6 +21,9 @@
       <tr id="jobs_<%= job.id %>">
         <td style="width: 20px; white-space: nowrap;"><%= job.id %></td>
         <td><%= job.title %></td>
+        <% I18n.available_locales.each do |locale| %>
+          <td><% if job.translated_locales.include? locale %><i class="icon-ok"></i><% end %></td>
+        <% end %>
         <td style="white-space: nowrap" width="100"><%= link_to 'Изменить', edit_admin_job_path(job), class: 'btn btn-info btn-mini' %>
             <%= link_to 'Удалить', admin_job_path(job), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger btn-mini' %></td>
       </tr>

@@ -13,6 +13,9 @@
       <th>Дата публикации</th>
       <th>Заголовок</th>
       <th>Картинка</th>
+      <% I18n.available_locales.each do |locale| %>
+        <th width="50"><%= locale %></th>
+      <% end %>
       <th>Действия</th>
     </tr>
   </thead>
@@ -22,6 +25,9 @@
       <td style="white-space: nowrap"><%= article.created_at %></td>
       <td><%= article.title %></td>
       <td><%= image_tag article.image.thumb if article.image.present? %></td>
+      <% I18n.available_locales.each do |locale| %>
+        <td><% if article.translated_locales.include? locale %><i class="icon-ok"></i><% end %></td>
+      <% end %>
       <td style="white-space: nowrap" width="100"><%= link_to 'Изменить', edit_admin_article_path(article), class: 'btn btn-info btn-mini' %>
           <%= link_to 'Удалить', admin_article_path(article), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger btn-mini' %></td>
     </tr>
