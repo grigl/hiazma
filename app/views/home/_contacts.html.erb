@@ -13,17 +13,11 @@
 
     <div class="feedback-done">
       <h5><%= t 'home.contacts.thank_you' %></h5>
-      <p>Your message have been sent, we will contact you soon.</p>
+      <p><%= t 'home.contacts.sent' %></p>
       <a href="#" class="button"><%= t 'home.contacts.ok' %></a>
     </div>
 
     <div class="feedback">
-<!--     <form>
-      <input type="text" class="textfield" placeholder="Name">
-      <input type="text" class="textfield" placeholder="Email">
-      <textarea class="textfield" placeholder="Your message"></textarea>
-      <input type="submit" class="button" value="Send">
-    </form> -->
     <%= form_for Feedback.new, remote: true do |f| %>
       <%= f.text_field :name, placeholder: t('home.contacts.name'), class: 'textfield' %>
       <%= f.text_field :email, placeholder: t('home.contacts.email'), class: 'textfield' %>

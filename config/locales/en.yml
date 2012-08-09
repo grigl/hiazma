@@ -17,15 +17,11 @@ en:
 
     job:
       title: Job
-      job_profile: Job Profile
-      your_profile: Your Profile
-      requirements: Requirements
-      other_skillsets: Other skillsets
-      how_to_apply: How to apply
 
     contacts:
       title: Contacts
       thank_you: Thank you
+      sent: Your message has been sent, we will contact you soon.
       ok: Ok
       name: Name
       email: Email

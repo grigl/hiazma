@@ -17,15 +17,11 @@ ru:
 
     job:
       title: Вакансии
-      job_profile: Job Profile
-      your_profile: Your Profile
-      requirements: Requirements
-      other_skillsets: Other skillsets
-      how_to_apply: How to apply
 
     contacts:
       title: Контакты
       thank_you: Спасибо
+      sent: Ваше сообщение отправлено, мы скоро с вами свяжемся.
       ok: Ок
       name: Имя
       email: Email
