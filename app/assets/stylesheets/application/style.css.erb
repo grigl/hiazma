@@ -2,30 +2,30 @@
 
 @font-face {
 	font-family: 'FuturaStdMediumRegular';
-	src: url(<%= asset_path 'fonts/futurastd-medium-webfont.eot' %>);
-	src: url(<%= asset_path 'fonts/futurastd-medium-webfont.eot?#iefix' %>) format('embedded-opentype'),
-			 url(<%= asset_path 'fonts/futurastd-medium-webfont.woff' %>) format('woff'),
-			 url(<%= asset_path 'fonts/futurastd-medium-webfont.ttf' %>) format('truetype');
+	src: url('fonts/futurastd-medium-webfont.eot');
+	src: url('fonts/futurastd-medium-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('fonts/futurastd-medium-webfont.woff') format('woff'),
+			 url('fonts/futurastd-medium-webfont.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'FuturaStdLightRegular';
-	src: url(<%= asset_path 'fonts/futurastd-light-webfont.eot' %>);
-	src: url(<%= asset_path 'fonts/futurastd-light-webfont.eot?#iefix' %>) format('embedded-opentype'),
-			 url(<%= asset_path 'fonts/futurastd-light-webfont.woff' %>) format('woff'),
-			 url(<%= asset_path 'fonts/futurastd-light-webfont.ttf' %>) format('truetype');
+	src: url('fonts/futurastd-light-webfont.eot');
+	src: url('fonts/futurastd-light-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('fonts/futurastd-light-webfont.woff') format('woff'),
+			 url('fonts/futurastd-light-webfont.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'FuturaStdExtraBoldRegular';
-	src: url(<%= asset_path 'fonts/futurastd-extrabold-webfont.eot' %>);
-	src: url(<%= asset_path 'fonts/futurastd-extrabold-webfont.eot?#iefix' %>) format('embedded-opentype'),
-			 url(<%= asset_path 'fonts/futurastd-extrabold-webfont.woff' %>) format('woff'),
-			 url(<%= asset_path 'fonts/futurastd-extrabold-webfont.ttf' %>) format('truetype');
+	src: url('fonts/futurastd-extrabold-webfont.eot');
+	src: url('fonts/futurastd-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('fonts/futurastd-extrabold-webfont.woff') format('woff'),
+			 url('fonts/futurastd-extrabold-webfont.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -144,7 +144,6 @@ section.texture {
 	background: url(<%= asset_path 'section_texture.jpg' %>) bottom no-repeat;
 }
 section.h100 {height: 90%;}
-section.js-magic-height {min-height: 0}
 
 .textfield {
 	display: inline-block;
@@ -156,7 +155,7 @@ section.js-magic-height {min-height: 0}
 	padding: 8px 16px;
 	font-size: 13px;
 	line-height: 18px;
-	color: #fff;
+	color: #656363;
 	background-color: #252525;
 	border: 0;
 	-webkit-box-shadow: inset 1px 1px 2px 0px #000, inset -1px -1px 2px 0px #3e3c3d;
@@ -351,7 +350,6 @@ footer .wrapper {
 .news-list-wrapper {
 	width: 20000px;
 	position: relative;
-	overflow: hidden;
 }
 .news-list-page {
 	float: left;
@@ -417,12 +415,7 @@ footer .wrapper {
 	margin-right: -40px;
 	padding-bottom: 30px;
 }
-	.jobs-grid .clear {
-		clear: both;
-		height: 1.5em;
-		margin: 0;
-		padding: 0;
-	}
+
 	.jobs-grid-item {
 		float: left;
 		width: 260px;
@@ -430,11 +423,11 @@ footer .wrapper {
 		background: url(<%= asset_path 'jobs_grid_item.png' %>) no-repeat;
 		min-height: 172px;
 	}
-	.jobs-grid-item.n-0 {
+	.jobs-grid-item:first-child {
 		padding-left: 0;
 		background: none;
 	}
-	.jobs-grid-item.n-2 {padding-right: 0;}
+	.jobs-grid-item:last-child {padding-right: 0;}
 	.jobs-grid-item h3 {
 		font: 20px/120% Verdana, Geneva, sans-serif;
 		color: #fff;
@@ -483,7 +476,6 @@ footer .wrapper {
 	font-size: 13px;
 	line-height: 230%;
 	color: #fff;
-	width: 340px;
 }
 .contacts p {margin: 0;}
 
