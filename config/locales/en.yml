@@ -44,3 +44,7 @@ en:
         field_8: Field 8
         field_9: Field 9
         field_10: Field 10
+
+  time:
+    formats:
+      main: "%m/%d/%Y"

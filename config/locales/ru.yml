@@ -44,3 +44,7 @@ ru:
         field_8: Поле 8
         field_9: Поле 9
         field_10: Поле 10
+        
+  time:
+    formats:
+      main: "%d.%m.%Y"        
