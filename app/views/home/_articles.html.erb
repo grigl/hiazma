@@ -62,7 +62,7 @@
                 <figure>
                   <%= ( image_tag article.image if article.image.present? ) || raw( '<img src="" width="978" height="318" alt="">' ) %>
                 </figure>
-                <span class="date"><%= article.created_at %></span>
+                <span class="date"><%= l article.created_at, :format => :main %></span>
                 <h3><%= article.title %></h3>
                 <%= article.description.html_safe if article.description? %>
                 <div class="link">
