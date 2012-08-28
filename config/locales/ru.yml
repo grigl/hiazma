@@ -48,3 +48,7 @@ ru:
   time:
     formats:
       main: "%d.%m.%Y"        
+      
+  date:
+    formats:
+      main: "%d.%m.%Y"      

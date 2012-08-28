@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :description, :image, :small_image, :title, :teaser
+  attr_accessible :description, :image, :small_image, :title, :teaser, :created_at
   mount_uploader :image, ImageUploader
   mount_uploader :small_image, ImageUploader
 

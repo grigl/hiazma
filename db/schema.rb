@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803002229) do
+ActiveRecord::Schema.define(:version => 20120828072742) do
 
   create_table "about_translations", :force => true do |t|
     t.integer  "about_id"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20120803002229) do
     t.string   "title"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at",  :null => false
+    t.date     "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "small_image"
     t.text     "teaser"

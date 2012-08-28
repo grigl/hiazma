@@ -48,3 +48,7 @@ en:
   time:
     formats:
       main: "%m/%d/%Y"
+      
+  date:
+    formats:
+      main: "%m/%d/%Y"
