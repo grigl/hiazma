@@ -1,34 +1,8 @@
 /* r e s e t */
 
-@font-face {
-	font-family: 'FuturaStdMediumRegular';
-	src: url('<%= asset_path 'application/fonts/futurastd-medium-webfont.eot' %>');
-	src: url('<%= asset_path 'application/fonts/futurastd-medium-webfont.eot?#iefix' %>') format('embedded-opentype'),
-			 url('<%= asset_path 'application/fonts/futurastd-medium-webfont.woff' %>') format('woff'),
-			 url('<%= asset_path 'application/fonts/futurastd-medium-webfont.ttf' %>') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,cyrillic-ext);
 
-@font-face {
-	font-family: 'FuturaStdLightRegular';
-	src: url('<%= asset_path 'application/fonts/futurastd-light-webfont.eot' %>');
-	src: url('<%= asset_path 'application/fonts/futurastd-light-webfont.eot?#iefix' %>') format('embedded-opentype'),
-			 url('<%= asset_path 'application/fonts/futurastd-light-webfont.woff' %>') format('woff'),
-			 url('<%= asset_path 'application/fonts/futurastd-light-webfont.ttf' %>') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'FuturaStdExtraBoldRegular';
-	src: url('<%= asset_path 'application/fonts/futurastd-extrabold-webfont.eot' %>');
-	src: url('<%= asset_path 'application/fonts/futurastd-extrabold-webfont.eot?#iefix' %>') format('embedded-opentype'),
-			 url('<%= asset_path 'application/fonts/futurastd-extrabold-webfont.woff' %>') format('woff'),
-			 url('<%= asset_path 'application/fonts/futurastd-extrabold-webfont.ttf' %>') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+@import url(http://fonts.googleapis.com/css?family=Russo+One&subset=latin,cyrillic);
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
 	display: block;
@@ -74,7 +48,7 @@ html, body, td, input, select, textarea {
 	a:active {}
 
 h1, h2, h3 {
-	font-family: 'FuturaStdLightRegular';
+	font-family: 'Ubuntu', Tahoma, Geneva, sans-serif;
 	font-weight: normal;
 	line-height: normal;
 }
@@ -122,7 +96,7 @@ figure img {
 	height: 58px;
 	background: url(<%= asset_path 'section_header.png' %>) 0 -7px no-repeat;
 	margin: auto;
-	font-size: 20px;
+	font-size: 19px;
 	line-height: 66px;
 	color: #fff;
 	text-align: center;
@@ -236,7 +210,7 @@ header {
 	.header-menu {
 		float: right;
 		margin-top: 8px;
-		font: 15px/34px 'FuturaStdMediumRegular';
+		font: 14px/34px 'Ubuntu', Tahoma, Geneva, sans-serif;
 	}
 	.header-menu li {
 		float: left;
@@ -405,7 +379,7 @@ footer .wrapper {
 }
 .projects-item:first-child {margin-right: 76px;}
 .projects-item h3 {
-	font: 30px/120% 'FuturaStdExtraBoldRegular';
+	font: 30px/120% 'Russo One', Tahoma, Geneva, sans-serif;
 	color: #fff;
 	margin-bottom: 14px;
 }
