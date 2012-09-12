@@ -66,9 +66,15 @@ $(document).ready(function(){
 		$(this).parent().toggleClass('open').next().slideToggle();
 	});
 
+// feedback-loader
+	$('.feedback .button').click(function(){
+		 $('.feedback-loader').show();
+	});
+	
 // feedback-done submit
 	$('.feedback-done .button').click(function(e){
 		e.preventDefault();
+		$('.feedback-loader').hide();
 		$('.feedback').slideDown();
 		$('.feedback-done').slideUp();
 	});

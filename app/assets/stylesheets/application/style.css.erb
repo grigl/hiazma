@@ -458,12 +458,13 @@ footer .wrapper {
 	float: right;
 	width: 620px;
 	padding-bottom: 60px;
+	position: relative;
 }
 .feedback .textfield {
 	width: 264px;
 	margin-bottom: 20px;
 }
-.feedback .textfield:first-child {margin-right: 19px;}
+.feedback .textfield.first {margin-right: 19px;}
 .feedback textarea.textfield {
 	width: 586px;
 	height: 100px;
@@ -482,6 +483,19 @@ footer .wrapper {
 	font-size: 20px;
 	font-weight: normal;
 	margin-bottom: 16px;
+}
+
+.feedback-loader {
+	background: url(<%= asset_path 'ajax_loader.gif' %>) center no-repeat #fff;
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	bottom: 66px;
+	left: 0;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+	display: none;
 }
 
 
