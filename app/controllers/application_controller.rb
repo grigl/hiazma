@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     detected = extract_locale_from_accept_language_header
-    if not I18n.available_locales.include? detected.to_sym
+    if detected
+      if not I18n.available_locales.include? detected.to_sym
+        detected = I18n.default_locale
+      end
+    else
       detected = I18n.default_locale
     end
     I18n.locale = params[:locale] || detected
