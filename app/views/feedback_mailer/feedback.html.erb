@@ -1,4 +1,6 @@
-<%= @message.description %><br />
+<% @message.description.lines.each do |line| %>
+  <%= line %><br />
+<% end %><br />
 
 Имя отправителя: <%= @message.name %><br />
 Электропочта отправителя: <%= @message.email %><br />
